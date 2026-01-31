@@ -17,10 +17,10 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
   }, []);
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto h-[420px] lg:h-[650px] -mt-12 lg:mt-0">
+    <div className="relative w-full max-w-2xl mx-auto h-[420px] xl:h-[650px] -mt-12 xl:mt-0">
       {/* Type/Text - positioned close to glasses, mobile adjustments */}
       <div
-        className={`absolute left-0 right-0 -top-3 lg:top-[30px] transition-all ease-out ${
+        className={`absolute left-0 right-0 -top-3 xl:top-[30px] transition-all ease-out ${
           startAnimation
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-16'
@@ -43,10 +43,10 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
       </div>
 
       {/* Container for glasses - mobile: tighter spacing, desktop: perfected spacing */}
-      <div className="absolute left-0 right-0 bottom-[120px] lg:bottom-[110px] h-[280px] lg:h-[500px]">
+      <div className="absolute left-0 right-0 bottom-[120px] xl:bottom-[110px] h-[280px] xl:h-[500px]">
         {/* Left Glass */}
         <div
-          className={`absolute bottom-[21px] lg:bottom-[-12px] transition-all ease-out ${
+          className={`absolute bottom-[21px] xl:bottom-[-12px] transition-all ease-out ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 -translate-x-64'
@@ -63,14 +63,14 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
             alt="Left wine glass"
             width={600}
             height={800}
-            className="w-full h-auto lg:hidden"
+            className="w-full h-auto xl:hidden"
             priority
           />
         </div>
 
         {/* Left Glass - Desktop only */}
         <div
-          className={`absolute hidden lg:block transition-all ease-out ${
+          className={`absolute hidden xl:block transition-all ease-out ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 -translate-x-64'
@@ -95,7 +95,7 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
 
         {/* Right Glass - Mobile */}
         <div
-          className={`absolute bottom-[20px] lg:bottom-[-14px] transition-all ease-out ${
+          className={`absolute bottom-[20px] xl:bottom-[-14px] transition-all ease-out ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-64'
@@ -112,14 +112,14 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
             alt="Right wine glass"
             width={600}
             height={800}
-            className="w-full h-auto lg:hidden"
+            className="w-full h-auto xl:hidden"
             priority
           />
         </div>
 
         {/* Right Glass - Desktop only */}
         <div
-          className={`absolute hidden lg:block transition-all ease-out ${
+          className={`absolute hidden xl:block transition-all ease-out ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-64'
