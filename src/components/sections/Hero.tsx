@@ -14,7 +14,7 @@ export function Hero() {
       <section className="relative h-screen w-full overflow-hidden bg-cream">
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="container mx-auto px-6 lg:px-8 w-full">
+          <div className="container mx-auto px-6 lg:px-8 w-full -mt-[15px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
             <div className="xl:hidden flex justify-center items-center">
               <AnimatedLogo showHeading={true} />
@@ -31,7 +31,7 @@ export function Hero() {
               >
                 <motion.h1
                   variants={heroText}
-                  className="font-serif text-display-lg text-navy mb-6 tracking-normal"
+                  className="font-serif text-display-md text-navy mb-6 tracking-normal"
                 >
                   {hero.headline}
                 </motion.h1>

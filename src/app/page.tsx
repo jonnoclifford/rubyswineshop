@@ -19,7 +19,7 @@ export default function Home() {
         <TiltingGlass side="left" />
         <TiltingGlass side="right" desktop={true} />
         <Menu />
-        <TiltingGlass side="right" marginTop="-mt-[320px]" marginBottom="mb-0" />
+        <TiltingGlass side="right" marginTop="-mt-[80px]" marginBottom="mb-0" />
         <Hungry />
         <WhatsOn />
         <FAQ />

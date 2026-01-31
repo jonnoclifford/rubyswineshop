@@ -11,7 +11,7 @@ export function Hungry() {
   const { hungry } = siteConfig;
 
   return (
-    <section className="py-section-lg bg-cream text-navy">
+    <section className="py-section-lg xl:pt-0 bg-cream text-navy">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Mobile: centered layout, Desktop: two-column layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
