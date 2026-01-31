@@ -44,6 +44,22 @@
     scroll-behavior: smooth;
   }
 
+  /* Fix for mobile browser viewport issues */
+  header[class*="fixed"] {
+    padding-top: max(env(safe-area-inset-top), 0px);
+  }
+
+  header[class*="fixed"]::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: inherit;
+    z-index: -1;
+  }
+
   /* Film grain texture overlay */
   body::before {
     content: '';

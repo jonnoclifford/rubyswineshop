@@ -48,6 +48,7 @@ export function Header() {
             ? 'bg-cream/95 backdrop-blur-sm shadow-sm translate-y-0 opacity-100'
             : 'bg-transparent md:translate-y-0 md:opacity-100 -translate-y-full opacity-0'
         }`}
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
       >
         <div className="container mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
