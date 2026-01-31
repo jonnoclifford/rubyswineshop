@@ -17,9 +17,9 @@ export function Hero() {
       <section ref={parallaxRef} className="relative h-screen w-full overflow-hidden bg-cream">
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="container mx-auto px-6 lg:px-8 w-full -mt-[15px] xl:mt-0">
+          <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
-            <div className="xl:hidden flex justify-center items-center">
+            <div className="xl:hidden flex justify-center items-center hero-mobile-content">
               <AnimatedLogo showHeading={true} />
             </div>
 
@@ -62,7 +62,7 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
+        <div className="absolute bottom-12 md:bottom-8 left-0 right-0 z-10 flex justify-center hero-scroll-indicator">
           <motion.button
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
