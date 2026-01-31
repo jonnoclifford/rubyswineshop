@@ -232,27 +232,27 @@ export const siteConfig: SiteConfig = {
     items: [
       {
         question: "Do you take bookings?",
-        answer: "Nope! We're walk-in only. We believe the best nights are unplanned, and we love the energy of a spontaneous visit. Come as you are-we'll find you a spot.",
-      },
-      {
-        question: "What if it's busy?",
-        answer: "If we're full, grab a drink and we'll text you when a table opens up. There's a great beer garden next door at The Boundary, or you can wander Albion's excellent coffee and retail strip.",
+        answer: "Walk-ins only. With an intimate 20-seat capacity, we believe the best nights are unplanned. We love the energy of a spontaneous visit, so just turn up and we'll find you a spot.",
       },
       {
         question: "Are you dog-friendly?",
-        answer: "Absolutely! Well-behaved pups are welcome in our outdoor area. We'll even bring them a water bowl.",
+        answer: "Absolutely! We're a dog friendly venue and well-behaved pups are welcome. We'll even bring them a water bowl.",
+      },
+      {
+        question: "What about food?",
+        answer: "BYO snacks are always welcome. We've also partnered with our neighbors at Olive Thyme - simply scan the QR code at your table to order modern Turkish meze delivered straight to your stool.",
       },
       {
         question: "Can I buy wine to take home?",
-        answer: "Yes! Most bottles on our list are available for takeaway at a small discount. Ask your bartender for details.",
+        answer: "Yes! We're a licensed bottle shop. All bottles on our list are available for retail purchase to take away, or you can enjoy them on-site with a small corkage fee.",
       },
       {
-        question: "Do you do events or private hire?",
-        answer: "We can accommodate small groups (up to 20) with advance notice. For private hire enquiries, email us at hello@rubyswinebar.com.au.",
+        question: "What are your opening hours?",
+        answer: "We're open Wednesday and Thursday from 4 PM, Friday from 4 PM, and weekends from 2 PM. Closed Monday and Tuesday. Check the top of the page for exact closing times.",
       },
       {
         question: "Where can I park?",
-        answer: "There's street parking on Sandgate Road and surrounding streets. It's free after 7 PM on weekdays and all day on weekends. Albion train station is a 5-minute walk.",
+        answer: "There's street parking on Sandgate Road and surrounding streets. It's free after 7 PM on weekdays and all day on weekends. Albion train station is a 5-minute walk if you're taking public transport.",
       },
     ],
   },

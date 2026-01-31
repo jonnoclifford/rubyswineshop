@@ -27,17 +27,17 @@ export function FAQ() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             {/* FAQ Items */}
             <AnimatedSection delay={0.2} variants={slideInLeft} className="lg:col-span-3">
-              <Accordion type="single" collapsible className="space-y-4">
+              <Accordion type="single" collapsible>
                 {faq.items.map((item, index) => (
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="border border-navy/10 bg-cream rounded-lg px-6"
+                    className="border-b border-navy/10 py-2"
                   >
-                    <AccordionTrigger className="font-serif text-heading-sm text-navy hover:text-terracotta tracking-normal">
+                    <AccordionTrigger className="text-body-lg text-navy hover:text-terracotta tracking-normal font-medium">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-body-md text-navy/80 leading-relaxed pt-2">
+                    <AccordionContent className="text-body-md text-navy/70 leading-relaxed">
                       {item.answer}
                     </AccordionContent>
                   </AccordionItem>
