@@ -1,0 +1,81 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { siteConfig } from '@/content/site-config';
+import { ChevronDown } from 'lucide-react';
+import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
+import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
+
+export function Hero() {
+  const { hero } = siteConfig;
+
+  return (
+    <>
+      <section className="relative h-screen w-full overflow-hidden bg-cream">
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="container mx-auto px-6 lg:px-8">
+            {/* Mobile: Centered Animated Logo with Heading */}
+            <div className="lg:hidden flex justify-center items-center">
+              <AnimatedLogo showHeading={true} />
+            </div>
+
+            {/* Desktop: Two Column Layout */}
+            <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Text Content */}
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="max-w-2xl"
+              >
+                <motion.h1
+                  variants={heroText}
+                  className="font-serif text-display-lg md:text-display-lg text-navy mb-6"
+                >
+                  {hero.headline}
+                </motion.h1>
+
+                <motion.p
+                  variants={staggerItem}
+                  className="text-body-lg md:text-heading-sm text-navy/80"
+                >
+                  {hero.subheadline}
+                </motion.p>
+              </motion.div>
+
+              {/* Right: Animated Logo */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex justify-center items-center"
+              >
+                <AnimatedLogo />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center">
+          <motion.button
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
+            className="cursor-pointer hover:opacity-70 transition-opacity"
+            onClick={() => {
+              const aboutSection = document.querySelector('#about');
+              if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            aria-label="Scroll to next section"
+          >
+            <ChevronDown className="w-8 h-8 text-terracotta" />
+          </motion.button>
+        </div>
+      </section>
+    </>
+  );
+}
