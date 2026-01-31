@@ -59,18 +59,13 @@ const config: Config = {
   		},
   		fontFamily: {
   			serif: [
-  				'var(--font-libre-caslon)',
+  				'var(--font-lora)',
   				'Georgia',
   				'serif'
   			],
   			sans: [
   				'var(--font-dm-sans)',
   				'system-ui',
-  				'sans-serif'
-  			],
-  			display: [
-  				'var(--font-titan-one)',
-  				'Impact',
   				'sans-serif'
   			]
   		},

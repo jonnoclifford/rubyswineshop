@@ -14,24 +14,24 @@ export function Hero() {
       <section className="relative h-screen w-full overflow-hidden bg-cream">
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="container mx-auto px-6 lg:px-8">
+          <div className="container mx-auto px-6 lg:px-8 w-full">
             {/* Mobile: Centered Animated Logo with Heading */}
-            <div className="lg:hidden flex justify-center items-center">
+            <div className="xl:hidden flex justify-center items-center">
               <AnimatedLogo showHeading={true} />
             </div>
 
-            {/* Desktop: Two Column Layout */}
-            <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Desktop: Two Column Layout - Only show at XL breakpoint */}
+            <div className="hidden xl:grid grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
               {/* Left: Text Content */}
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-                className="max-w-2xl"
+                className="max-w-xl"
               >
                 <motion.h1
                   variants={heroText}
-                  className="font-serif font-bold text-display-lg md:text-display-lg text-navy mb-6 tracking-wide"
+                  className="font-serif font-bold text-display-lg text-navy mb-6 tracking-wide"
                 >
                   {hero.headline}
                 </motion.h1>

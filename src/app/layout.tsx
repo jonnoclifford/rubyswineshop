@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Libre_Caslon_Display, DM_Sans } from 'next/font/google';
+import { Lora, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site-config';
 import { generateLocalBusinessSchema } from '@/lib/seo';
 
-const libreCaslon = Libre_Caslon_Display({
-  weight: ['400'],
+const lora = Lora({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-libre-caslon',
+  variable: '--font-lora',
   display: 'swap',
 });
 
@@ -66,7 +66,7 @@ export default function RootLayout({
   const schema = generateLocalBusinessSchema();
 
   return (
-    <html lang="en" className={`${libreCaslon.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${lora.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
