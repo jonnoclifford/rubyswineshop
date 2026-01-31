@@ -21,13 +21,13 @@ export function Hero() {
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
             <div className="xl:hidden flex justify-center items-center">
-              {/* Portrait: Animated Logo */}
-              <div className="portrait:block landscape:hidden">
+              {/* Default (Portrait): Animated Logo */}
+              <div className="block landscape-mobile:hidden">
                 <AnimatedLogo showHeading={true} />
               </div>
 
-              {/* Landscape: Static Logo */}
-              <div className="portrait:hidden landscape:block">
+              {/* Landscape Only: Static Logo */}
+              <div className="hidden landscape-mobile:block">
                 <Image
                   src="/images/logo-static.png"
                   alt="Ruby's Wine Shop"
