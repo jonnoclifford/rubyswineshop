@@ -6,6 +6,7 @@ import { ChevronDown } from 'lucide-react';
 import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
 import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
 import { useParallax } from '@/lib/hooks/useParallax';
+import Image from 'next/image';
 
 export function Hero() {
   const { hero } = siteConfig;
@@ -19,8 +20,23 @@ export function Hero() {
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
-            <div className="xl:hidden flex justify-center items-center hero-mobile-content">
-              <AnimatedLogo showHeading={true} />
+            <div className="xl:hidden flex justify-center items-center">
+              {/* Portrait: Animated Logo */}
+              <div className="portrait:block landscape:hidden">
+                <AnimatedLogo showHeading={true} />
+              </div>
+
+              {/* Landscape: Static Logo */}
+              <div className="portrait:hidden landscape:block">
+                <Image
+                  src="/images/logo-static.png"
+                  alt="Ruby's Wine Shop"
+                  width={300}
+                  height={300}
+                  className="w-64 h-auto"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Desktop: Two Column Layout - Only show at XL breakpoint */}
@@ -62,7 +78,7 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 md:bottom-8 left-0 right-0 z-10 flex justify-center hero-scroll-indicator">
+        <div className="absolute bottom-12 md:bottom-8 left-0 right-0 z-10 flex justify-center">
           <motion.button
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}

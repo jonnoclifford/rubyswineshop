@@ -61,18 +61,6 @@
     z-index: -1;
   }
 
-  /* Fix for landscape mobile orientation */
-  @media (orientation: landscape) and (max-height: 600px) {
-    .hero-mobile-content {
-      transform: scale(0.7);
-      margin-top: -60px !important;
-    }
-
-    .hero-scroll-indicator {
-      bottom: 1rem !important;
-    }
-  }
-
   /* Film grain texture overlay */
   body::before {
     content: '';
