@@ -56,7 +56,7 @@ export const siteConfig: SiteConfig = {
     heading: "Meet Ruby",
     story: [
       "Ruby's isn't just a wine shop—it's a love letter to natural wines, spontaneous conversations, and the magic that happens when you let an evening unfold without a plan.",
-      "Named after our founder's grandmother, who believed the best gatherings were unplanned and the best wines were poured with abandon, we're here to bring that spirit to Albion.",
+      "Named after our founder's beloved border collie, who greets every visitor with boundless enthusiasm and never met a stranger, we're here to bring that same warm, welcoming spirit to Albion.",
       "We champion small producers, natural winemaking, and the kind of hospitality that feels like coming home. No bookings, no fuss—just great wine and even better company.",
     ],
     image: {
