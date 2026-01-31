@@ -16,7 +16,7 @@ export function FAQ() {
     <section className="py-section-lg bg-cream-dark">
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-display text-display-md text-navy mb-12 text-center">
+          <h2 className="font-serif font-bold text-display-md text-navy mb-12 text-center tracking-wide">
             {faq.heading}
           </h2>
         </AnimatedSection>
@@ -30,7 +30,7 @@ export function FAQ() {
                   value={`item-${index}`}
                   className="border border-navy/10 bg-cream rounded-lg px-6"
                 >
-                  <AccordionTrigger className="font-display text-heading-sm text-navy hover:text-terracotta">
+                  <AccordionTrigger className="font-serif font-bold text-heading-sm text-navy hover:text-terracotta tracking-wide">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-body-md text-navy/80 leading-relaxed pt-2">

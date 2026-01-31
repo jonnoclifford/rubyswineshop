@@ -13,7 +13,7 @@ export function Menu() {
     <section id="menu" className="py-section-lg bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif font-bold text-display-md text-navy mb-12 text-center">
+          <h2 className="font-serif font-bold text-display-md text-navy mb-12 text-center tracking-wide">
             {menu.heading}
           </h2>
         </AnimatedSection>
@@ -21,7 +21,7 @@ export function Menu() {
         {/* By the Glass */}
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif font-bold text-heading-lg text-terracotta mb-8">
+            <h3 className="font-serif font-bold text-heading-lg text-terracotta mb-8 tracking-wide">
               {menu.byTheGlass.heading}
             </h3>
           </AnimatedSection>
@@ -44,7 +44,7 @@ export function Menu() {
         {/* By the Bottle */}
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif font-bold text-heading-lg text-terracotta mb-8">
+            <h3 className="font-serif font-bold text-heading-lg text-terracotta mb-8 tracking-wide">
               {menu.byTheBottle.heading}
             </h3>
           </AnimatedSection>
@@ -52,7 +52,7 @@ export function Menu() {
           <div className="space-y-12">
             {menu.byTheBottle.categories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h4 className="font-serif font-bold text-heading-md text-navy mb-6">
+                <h4 className="font-serif font-bold text-heading-md text-navy mb-6 tracking-wide">
                   {category.name}
                 </h4>
                 <motion.div

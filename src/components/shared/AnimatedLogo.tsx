@@ -157,7 +157,7 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
             transitionDuration: '1150ms',
           }}
         >
-          <h1 className="font-serif font-bold text-heading-lg text-navy text-center px-6">
+          <h1 className="font-serif font-bold text-heading-lg text-navy text-center px-6 tracking-wide">
             Natural wines meet neighbourhood charm
           </h1>
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Libre_Caslon_Display, DM_Sans, Titan_One } from 'next/font/google';
+import { Libre_Caslon_Display, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site-config';
 import { generateLocalBusinessSchema } from '@/lib/seo';
@@ -15,13 +15,6 @@ const dmSans = DM_Sans({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   variable: '--font-dm-sans',
-  display: 'swap',
-});
-
-const titanOne = Titan_One({
-  weight: ['400'],
-  subsets: ['latin'],
-  variable: '--font-titan-one',
   display: 'swap',
 });
 
@@ -73,7 +66,7 @@ export default function RootLayout({
   const schema = generateLocalBusinessSchema();
 
   return (
-    <html lang="en" className={`${libreCaslon.variable} ${dmSans.variable} ${titanOne.variable}`}>
+    <html lang="en" className={`${libreCaslon.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
