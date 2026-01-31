@@ -9,13 +9,15 @@ interface TiltingGlassProps {
   marginTop?: string;
   marginBottom?: string;
   desktop?: boolean;
+  inline?: boolean;
 }
 
 export function TiltingGlass({
   side = 'left',
   marginTop = '-mt-8',
   marginBottom = 'mb-2',
-  desktop = false
+  desktop = false,
+  inline = false
 }: TiltingGlassProps) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,10 +31,50 @@ export function TiltingGlass({
 
   const horizontalMargin = side === 'left' ? '-ml-5' : 'ml-5';
 
+  if (inline) {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative w-64 h-64"
+        style={{
+          transformOrigin: 'center 85%',
+        }}
+      >
+        <motion.div
+          animate={{
+            rotate: [0, -8, 0, 8, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            repeatDelay: 0.5,
+          }}
+          style={{
+            transformOrigin: 'center 85%',
+          }}
+        >
+          <Image
+            src={glassImage}
+            alt="Wine glass"
+            width={400}
+            height={400}
+            className="w-full h-auto"
+            priority
+          />
+        </motion.div>
+      </motion.div>
+    );
+  }
+
   if (desktop) {
+    const horizontalPosition = side === 'right' ? 'right-[10%]' : 'left-[10%]';
+
     return (
       <div className="hidden lg:block relative bg-cream">
-        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-0 z-10">
+        <div className={`absolute ${horizontalPosition} -translate-y-3/4 top-0 z-10`}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
