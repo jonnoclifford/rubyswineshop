@@ -56,7 +56,7 @@ export const siteConfig: SiteConfig = {
     heading: "Meet Ruby",
     story: [
       "Ruby's is a neighbourhood wine shop in Albion dedicated to natural and low-intervention wines. We're here for spontaneous visits, good conversations, and letting the evening unfold however it wants to.",
-      "The shop is named after our founder's border collie, Ruby, who has never met a stranger and thinks everyone who walks through the door is there specifically to see her. We try to match her energy.",
+      "The shop is named after our founder's border collie, Ruby, who has never met a stranger she didn't like and thinks everyone who walks through the door is there specifically to see her. We try to match her energy.",
       "We work with small producers who make honest wines, and we believe the best nights are the ones you didn't plan. No bookings, just turn up. Bring your friends or make new ones here.",
     ],
     image: {
