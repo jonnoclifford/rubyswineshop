@@ -49,11 +49,13 @@ export function FAQ() {
             <AnimatedSection delay={0.4} variants={slideInRight} className="lg:col-span-2">
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-xl sticky top-8">
                 <Image
-                  src="/images/storefront-window.png"
+                  src="/images/storefront-window.jpg"
                   alt="Ruby's Wine Shop storefront window with logo"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
             </AnimatedSection>

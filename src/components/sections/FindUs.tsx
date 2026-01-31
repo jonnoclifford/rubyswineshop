@@ -28,6 +28,8 @@ export function FindUs() {
                 fill
                 className="object-cover object-bottom"
                 sizes="(max-width: 1024px) 100vw, 80vw"
+                loading="lazy"
+                quality={90}
               />
             </div>
           </AnimatedSection>

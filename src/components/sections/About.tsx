@@ -21,6 +21,8 @@ export function About() {
                 fill
                 className="object-cover object-[40%]"
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                loading="lazy"
+                quality={90}
               />
             </div>
           </AnimatedSection>
