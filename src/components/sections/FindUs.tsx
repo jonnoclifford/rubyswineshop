@@ -13,7 +13,7 @@ export function FindUs() {
     <section id="find-us" className="py-section-lg bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif font-bold tracking-normal text-display-md text-navy mb-12 text-center">
+          <h2 className="font-serif tracking-normal text-display-md text-navy mb-12 text-center">
             {findUs.heading}
           </h2>
         </AnimatedSection>
@@ -52,7 +52,7 @@ export function FindUs() {
           {/* Contact Info */}
           <AnimatedSection variants={slideInRight}>
             <div>
-              <h3 className="font-serif font-bold tracking-normal text-heading-lg text-navy mb-6">
+              <h3 className="font-serif tracking-normal text-heading-lg text-navy mb-6">
                 {findUs.contactHeading}
               </h3>
 
@@ -61,7 +61,7 @@ export function FindUs() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-bold tracking-normal text-heading-sm text-navy mb-1">
+                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
                       Address
                     </h4>
                     <address className="text-body-md text-navy/80 not-italic">
@@ -75,7 +75,7 @@ export function FindUs() {
                 <div className="flex items-start gap-4">
                   <Phone className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-bold tracking-normal text-heading-sm text-navy mb-1">
+                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
                       Phone
                     </h4>
                     <a
@@ -91,7 +91,7 @@ export function FindUs() {
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-bold tracking-normal text-heading-sm text-navy mb-1">
+                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
                       Email
                     </h4>
                     <a
@@ -107,7 +107,7 @@ export function FindUs() {
                 <div className="flex items-start gap-4">
                   <Instagram className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-bold tracking-normal text-heading-sm text-navy mb-1">
+                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
                       Instagram
                     </h4>
                     <a
@@ -123,7 +123,7 @@ export function FindUs() {
 
                 {/* Hours */}
                 <div className="pt-6 border-t border-navy/10">
-                  <h4 className="font-serif font-bold tracking-normal text-heading-sm text-navy mb-4">
+                  <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-4">
                     Opening Hours
                   </h4>
                   <div className="space-y-2">

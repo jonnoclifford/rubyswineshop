@@ -13,7 +13,7 @@ export function WhatsOn() {
     <section id="whats-on" className="py-section-lg bg-terracotta">
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif font-bold text-display-md text-cream mb-12 text-center tracking-normal">
+          <h2 className="font-serif text-display-md text-cream mb-12 text-center tracking-normal">
             {whatsOn.heading}
           </h2>
         </AnimatedSection>
