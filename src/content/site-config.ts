@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
     name: "Ruby's Wine Shop",
     tagline: "Natural wines & good vibes in Albion",
     address: {
-      street: "123 Sandgate Road",
+      street: "3/297 Sandgate Road",
       suburb: "Albion",
       state: "QLD",
       postcode: "4010",
@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
     hours: {
       Monday: "Closed",
       Tuesday: "Closed",
-      Wednesday: "4:00 PM - 10:00 PM",
+      Wednesday: "4:00 PM - 9:00 PM",
       Thursday: "4:00 PM - 10:00 PM",
       Friday: "4:00 PM - 11:00 PM",
       Saturday: "2:00 PM - 11:00 PM",
@@ -33,7 +33,7 @@ export const siteConfig: SiteConfig = {
 
   hero: {
     headline: "Natural wines meet neighbourhood charm",
-    subheadline: "A cosy Albion wine shop celebrating low-intervention wines, local snacks, and spontaneous evenings",
+    subheadline: "A cosy wine bar in the heart of Albion celebrating low-intervention wines, local snacks, and spontaneous evenings",
     ctas: {
       primary: {
         text: "Visit Us",
@@ -55,9 +55,9 @@ export const siteConfig: SiteConfig = {
   about: {
     heading: "Meet Ruby",
     story: [
-      "Ruby's is a neighbourhood wine shop in Albion dedicated to natural and low-intervention wines. We're here for spontaneous visits, good conversations, and letting the evening unfold however it wants to.",
-      "The shop is named after our founder's border collie, Ruby, who has never met a stranger she didn't like and thinks everyone who walks through the door is there specifically to see her. We try to match her energy.",
-      "We work with small producers who make honest wines, and we believe the best nights are the ones you didn't plan. No bookings, just turn up. Bring your friends or make new ones here.",
+      "Ruby's is a sliver of Swiss wine culture in Albion. We are an intimate neighborhood bar and shop focused on natural and low-intervention wines. We're here for spontaneous visits, good conversations, and letting the evening unfold however it wants to.",
+      "The bar is named after our founder's border collie, Ruby. She is a perpetually optimistic pup who greets every visitor like an old friend and firmly believes the world revolves around her. She is usually right. We try to match her warm, welcoming energy.",
+      "With over 100 bottles on the shelf and 6 to 8 rotating daily pours, including our own house-made Pet Nat, there is always something new to try. We keep things simple with 20 seats and a walk-ins only policy. Bring your own snacks or scan a QR code to have modern Turkish meze from our neighbors at Olive Thyme delivered straight to your stool.",
     ],
     image: {
       src: "/images/ruby-portrait.jpg",
@@ -193,8 +193,8 @@ export const siteConfig: SiteConfig = {
     heading: "Feeling Hungry?",
     description: [
       "We've partnered with Olive Thyme next door to bring you seriously good food without leaving your seat.",
-      "Browse their menu of share plates, wood-fired pizzas, and Mediterranean-inspired dishes-all designed to pair beautifully with natural wine.",
-      "Order at the bar and we'll bring it to your table. Easy.",
+      "Browse their menu of share plates, wood-fired pizzas, and Mediterranean-inspired dishes—all designed to pair beautifully with natural wine.",
+      "Order at the bar and we'll coordinate delivery to your table. Easy.",
     ],
     partnerName: "Olive Thyme",
     partnerLink: "https://www.olivethyme.com.au",
@@ -274,19 +274,20 @@ export const siteConfig: SiteConfig = {
   },
 
   seo: {
-    title: "Ruby's Wine Shop | Natural Wines in Albion, Brisbane",
-    description: "A cosy Albion wine shop celebrating natural wines, local snacks, and spontaneous evenings. Walk-in only, dog-friendly, and proudly independent.",
+    title: "Ruby's Wine Bar & Shop | Albion, Brisbane",
+    description: "A cosy Albion wine bar celebrating natural wines, local snacks, and spontaneous evenings. Walk-in only, dog-friendly, and proudly independent.",
     keywords: [
-      "wine shop Brisbane",
+      "wine bar Brisbane",
       "natural wine Albion",
-      "wine shop Albion",
+      "wine bar Albion",
       "natural wine Brisbane",
-      "dog-friendly wine shop Brisbane",
-      "walk-in wine shop",
+      "dog-friendly wine bar Brisbane",
+      "walk-in wine bar",
       "low intervention wine",
       "Australian natural wine",
       "wine tasting Brisbane",
-      "Albion wine shop",
+      "Sandgate Road wine bar",
+      "Albion wine bar",
     ],
     ogImage: "/images/og-image.jpg",
   },

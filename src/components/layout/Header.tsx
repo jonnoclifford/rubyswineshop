@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { MagneticButton } from '@/components/ui/magnetic-button';
 import { siteConfig } from '@/content/site-config';
 import { VisitUsModal } from '@/components/shared/VisitUsModal';
 
@@ -79,17 +80,19 @@ export function Header() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="text-body-md text-navy hover:text-terracotta transition-colors"
+                  className="text-body-sm uppercase tracking-[0.08em] text-navy hover:text-terracotta transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button
+              <MagneticButton
+                magnetic
+                magneticStrength={0.25}
                 onClick={() => setIsModalOpen(true)}
-                className="bg-terracotta hover:bg-terracotta-dark text-cream"
+                className="bg-terracotta hover:bg-terracotta-dark text-cream uppercase"
               >
                 Visit Us
-              </Button>
+              </MagneticButton>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -128,7 +131,7 @@ export function Header() {
                     setIsMobileMenuOpen(false);
                     setIsModalOpen(true);
                   }}
-                  className="bg-terracotta hover:bg-terracotta-dark text-cream w-full"
+                  className="bg-terracotta hover:bg-terracotta-dark text-cream w-full uppercase"
                 >
                   Visit Us
                 </Button>

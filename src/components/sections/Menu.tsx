@@ -21,7 +21,7 @@ export function Menu() {
         {/* By the Glass */}
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal">
+            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
               {menu.byTheGlass.heading}
             </h3>
           </AnimatedSection>
@@ -44,7 +44,7 @@ export function Menu() {
         {/* By the Bottle */}
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal">
+            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
               {menu.byTheBottle.heading}
             </h3>
           </AnimatedSection>
@@ -52,7 +52,7 @@ export function Menu() {
           <div className="space-y-12">
             {menu.byTheBottle.categories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h4 className="font-serif text-heading-md text-navy mb-6 tracking-normal">
+                <h4 className="font-serif text-heading-md text-navy mb-6 tracking-normal uppercase">
                   {category.name}
                 </h4>
                 <motion.div

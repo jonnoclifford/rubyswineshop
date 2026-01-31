@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .editorial-caps {
+    @apply uppercase tracking-[0.08em] text-body-sm font-medium;
+  }
+}
+
 @layer base {
   :root {
     --background: 42 23% 95%; /* cream */
@@ -38,6 +44,18 @@
     scroll-behavior: smooth;
   }
 
+  /* Film grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    z-index: 9999;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuNSIvPjwvc3ZnPg==');
+    mix-blend-mode: multiply;
+  }
+
   /* Respect user's reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -49,6 +67,9 @@
     }
     html {
       scroll-behavior: auto;
+    }
+    body::before {
+      display: none;
     }
   }
 }

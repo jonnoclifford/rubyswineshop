@@ -89,7 +89,7 @@ export function VisitUsModal({ open, onOpenChange }: VisitUsModalProps) {
 
           <Button
             onClick={() => onOpenChange(false)}
-            className="w-full bg-terracotta hover:bg-terracotta-dark text-cream"
+            className="w-full bg-terracotta hover:bg-terracotta-dark text-cream uppercase"
           >
             {walkInModal.ctaText}
           </Button>

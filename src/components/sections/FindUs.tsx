@@ -19,14 +19,14 @@ export function FindUs() {
         </AnimatedSection>
 
         <div className="max-w-6xl mx-auto">
-          {/* Evening Storefront Image */}
+          {/* Storefront Image */}
           <AnimatedSection variants={fadeIn}>
             <div className="relative aspect-[16/9] lg:aspect-[21/9] rounded-lg overflow-hidden shadow-xl mb-12">
               <Image
-                src="/images/storefront-evening.png"
-                alt="Ruby's Wine Shop at evening - warm and inviting atmosphere"
+                src="/images/exterior-albion.webp"
+                alt="Ruby's Wine Shop in the historic Albion Building on Sandgate Road"
                 fill
-                className="object-cover"
+                className="object-cover object-bottom"
                 sizes="(max-width: 1024px) 100vw, 80vw"
               />
             </div>

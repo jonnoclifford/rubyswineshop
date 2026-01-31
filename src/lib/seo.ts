@@ -15,6 +15,8 @@ export function generateLocalBusinessSchema() {
     email: business.contact.email,
     priceRange: '$$',
     servesCuisine: 'Wine Bar',
+    acceptsReservations: false,
+    hasMenu: true,
     address: {
       '@type': 'PostalAddress',
       streetAddress: business.address.street,
@@ -28,25 +30,38 @@ export function generateLocalBusinessSchema() {
       latitude: business.coordinates.lat,
       longitude: business.coordinates.lng,
     },
-    openingHoursSpecification: Object.entries(business.hours)
-      .filter(([, hours]) => hours !== 'Closed')
-      .map(([day, hours]) => {
-        const [open, close] = hours.split(' - ').map(time => {
-          const [hourMin, period] = time.split(' ');
-          const [hour, min] = hourMin.split(':');
-          let hour24 = parseInt(hour);
-          if (period === 'PM' && hour24 !== 12) hour24 += 12;
-          if (period === 'AM' && hour24 === 12) hour24 = 0;
-          return `${hour24.toString().padStart(2, '0')}:${min}`;
-        });
-
-        return {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: day,
-          opens: open,
-          closes: close,
-        };
-      }),
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Wednesday',
+        opens: '16:00',
+        closes: '21:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Thursday',
+        opens: '16:00',
+        closes: '22:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Friday',
+        opens: '16:00',
+        closes: '23:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '14:00',
+        closes: '23:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Sunday',
+        opens: '14:00',
+        closes: '21:00',
+      },
+    ],
     sameAs: [
       `https://instagram.com/${business.contact.instagram.replace('@', '')}`,
     ],

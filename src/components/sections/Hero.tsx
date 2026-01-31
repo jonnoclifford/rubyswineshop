@@ -1,17 +1,20 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { siteConfig } from '@/content/site-config';
 import { ChevronDown } from 'lucide-react';
 import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
 import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
+import { useParallax } from '@/lib/hooks/useParallax';
 
 export function Hero() {
   const { hero } = siteConfig;
+  const { ref: parallaxRef, y } = useParallax(100);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <>
-      <section className="relative h-screen w-full overflow-hidden bg-cream">
+      <section ref={parallaxRef} className="relative h-screen w-full overflow-hidden bg-cream">
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[15px] xl:mt-0">
@@ -49,6 +52,7 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
+                style={{ y: shouldReduceMotion ? 0 : y }}
                 className="flex justify-center items-center"
               >
                 <AnimatedLogo />
