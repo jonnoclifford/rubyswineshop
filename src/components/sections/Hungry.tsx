@@ -24,7 +24,7 @@ export function Hungry() {
           <div className="w-full lg:w-2/3">
             <div className="max-w-3xl mx-auto text-center lg:text-left">
               <AnimatedSection variants={fadeIn}>
-                <h2 className="font-serif font-bold text-display-md mb-8 tracking-wide">
+                <h2 className="font-serif font-bold text-display-md mb-8 tracking-normal">
                   {hungry.heading}
                 </h2>
               </AnimatedSection>

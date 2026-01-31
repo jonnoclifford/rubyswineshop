@@ -31,7 +31,7 @@ export function Hero() {
               >
                 <motion.h1
                   variants={heroText}
-                  className="font-serif font-bold text-display-lg text-navy mb-6 tracking-wide"
+                  className="font-serif font-bold text-display-lg text-navy mb-6 tracking-normal"
                 >
                   {hero.headline}
                 </motion.h1>

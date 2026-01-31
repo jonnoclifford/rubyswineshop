@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Lora, DM_Sans } from 'next/font/google';
+import { Prata, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site-config';
 import { generateLocalBusinessSchema } from '@/lib/seo';
 
-const lora = Lora({
-  weight: ['400', '500', '600', '700'],
+const prata = Prata({
+  weight: ['400'],
   subsets: ['latin'],
-  variable: '--font-lora',
+  variable: '--font-prata',
   display: 'swap',
 });
 
@@ -66,7 +66,7 @@ export default function RootLayout({
   const schema = generateLocalBusinessSchema();
 
   return (
-    <html lang="en" className={`${lora.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${prata.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"

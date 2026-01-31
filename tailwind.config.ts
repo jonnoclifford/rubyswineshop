@@ -59,7 +59,7 @@ const config: Config = {
   		},
   		fontFamily: {
   			serif: [
-  				'var(--font-lora)',
+  				'var(--font-prata)',
   				'Georgia',
   				'serif'
   			],

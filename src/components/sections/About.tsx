@@ -28,7 +28,7 @@ export function About() {
           {/* Content */}
           <AnimatedSection variants={slideInRight}>
             <div>
-              <h2 className="font-serif font-bold text-display-md text-navy mb-6 tracking-wide">
+              <h2 className="font-serif font-bold text-display-md text-navy mb-6 tracking-normal">
                 {about.heading}
               </h2>
 
