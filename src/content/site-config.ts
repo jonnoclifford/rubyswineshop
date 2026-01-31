@@ -118,7 +118,7 @@ export const siteConfig: SiteConfig = {
               producer: "Minimum Wines",
               region: "Basket Range, SA",
               price: "$70",
-              description: "Cloudy, funky, alive—perfect for adventurous palates",
+              description: "Cloudy, funky, alive-perfect for adventurous palates",
             },
           ],
         },
@@ -193,7 +193,7 @@ export const siteConfig: SiteConfig = {
     heading: "Feeling Hungry?",
     description: [
       "We've partnered with Olive Thyme next door to bring you seriously good food without leaving your seat.",
-      "Browse their menu of share plates, wood-fired pizzas, and Mediterranean-inspired dishes—all designed to pair beautifully with natural wine.",
+      "Browse their menu of share plates, wood-fired pizzas, and Mediterranean-inspired dishes-all designed to pair beautifully with natural wine.",
       "Order at the bar and we'll bring it to your table. Easy.",
     ],
     partnerName: "Olive Thyme",
@@ -232,7 +232,7 @@ export const siteConfig: SiteConfig = {
     items: [
       {
         question: "Do you take bookings?",
-        answer: "Nope! We're walk-in only. We believe the best nights are unplanned, and we love the energy of a spontaneous visit. Come as you are—we'll find you a spot.",
+        answer: "Nope! We're walk-in only. We believe the best nights are unplanned, and we love the energy of a spontaneous visit. Come as you are-we'll find you a spot.",
       },
       {
         question: "What if it's busy?",
@@ -261,7 +261,7 @@ export const siteConfig: SiteConfig = {
     heading: "No Bookings, Just Good Vibes",
     message: [
       "We're proudly walk-in only. Why? Because we believe the best evenings are spontaneous, and the best conversations happen when you let the night unfold naturally.",
-      "Just show up and we'll take care of the rest. If we're full, we'll text you when a spot opens up—grab a drink nearby and we'll see you soon.",
+      "Just show up and we'll take care of the rest. If we're full, we'll text you when a spot opens up-grab a drink nearby and we'll see you soon.",
     ],
     hoursHeading: "When to Find Us",
     ctaText: "Got it!",
