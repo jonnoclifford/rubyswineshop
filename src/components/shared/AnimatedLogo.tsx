@@ -20,7 +20,7 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
     <div className="relative w-full max-w-2xl mx-auto h-[420px] lg:h-[650px] -mt-12 lg:mt-0">
       {/* Type/Text - positioned close to glasses, mobile adjustments */}
       <div
-        className={`absolute left-0 right-0 top-0 lg:top-[30px] transition-all ease-out ${
+        className={`absolute left-0 right-0 -top-12 lg:top-[30px] transition-all ease-out ${
           startAnimation
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-16'
