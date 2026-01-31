@@ -6,7 +6,6 @@ import { ChevronDown } from 'lucide-react';
 import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
 import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
 import { useParallax } from '@/lib/hooks/useParallax';
-import Image from 'next/image';
 
 export function Hero() {
   const { hero } = siteConfig;
@@ -21,22 +20,7 @@ export function Hero() {
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
             <div className="xl:hidden flex justify-center items-center">
-              {/* Default (Portrait): Animated Logo */}
-              <div className="block landscape-mobile:hidden">
-                <AnimatedLogo showHeading={true} />
-              </div>
-
-              {/* Landscape Only: Static Logo */}
-              <div className="hidden landscape-mobile:block">
-                <Image
-                  src="/images/logo-static.png"
-                  alt="Ruby's Wine Shop"
-                  width={300}
-                  height={300}
-                  className="w-64 h-auto"
-                  priority
-                />
-              </div>
+              <AnimatedLogo showHeading={true} />
             </div>
 
             {/* Desktop: Two Column Layout - Only show at XL breakpoint */}

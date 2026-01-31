@@ -61,16 +61,6 @@
     z-index: -1;
   }
 
-  /* Landscape mobile orientation - only show static logo */
-  @media (orientation: landscape) and (max-height: 600px) {
-    .landscape-mobile\:hidden {
-      display: none !important;
-    }
-    .landscape-mobile\:block {
-      display: block !important;
-    }
-  }
-
   /* Film grain texture overlay */
   body::before {
     content: '';
