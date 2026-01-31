@@ -17,6 +17,7 @@ export default function Home() {
         <Hero />
         <About />
         <TiltingGlass side="left" />
+        <TiltingGlass side="right" desktop={true} />
         <Menu />
         <TiltingGlass side="right" marginTop="-mt-[52px]" marginBottom="mb-0" />
         <Hungry />
