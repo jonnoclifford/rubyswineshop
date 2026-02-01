@@ -7,12 +7,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { siteConfig } from '@/content/site-config';
 import Image from 'next/image';
 import { slideInLeft, slideInRight } from '@/lib/animations';
+import type { FAQContent } from '@/types/content';
 
-export function FAQ() {
-  const { faq } = siteConfig;
+interface FAQProps {
+  faq: FAQContent;
+}
+
+export function FAQ({ faq }: FAQProps) {
 
   return (
     <section className="py-section-lg bg-cream-dark">
@@ -46,19 +49,21 @@ export function FAQ() {
             </AnimatedSection>
 
             {/* Image */}
-            <AnimatedSection delay={0.4} variants={slideInRight} className="lg:col-span-2">
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-xl sticky top-8">
-                <Image
-                  src="/images/storefront-window.jpg"
-                  alt="Ruby's Wine Shop storefront window with logo"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  loading="lazy"
-                  quality={85}
-                />
-              </div>
-            </AnimatedSection>
+            {faq.image && (
+              <AnimatedSection delay={0.4} variants={slideInRight} className="lg:col-span-2">
+                <div className="relative aspect-square rounded-lg overflow-hidden shadow-xl sticky top-8">
+                  <Image
+                    src={faq.image.src}
+                    alt={faq.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    loading="lazy"
+                    quality={85}
+                  />
+                </div>
+              </AnimatedSection>
+            )}
           </div>
         </div>
       </div>

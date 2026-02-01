@@ -8,16 +8,23 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/content/site-config';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import type { BusinessInfo, WalkInModalContent } from '@/types/content';
+import { siteConfig } from '@/content/site-config';
 
 interface VisitUsModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  business?: BusinessInfo;
+  walkInModal?: WalkInModalContent;
 }
 
-export function VisitUsModal({ open, onOpenChange }: VisitUsModalProps) {
-  const { walkInModal, business } = siteConfig;
+export function VisitUsModal({
+  open,
+  onOpenChange,
+  business = siteConfig.business,
+  walkInModal = siteConfig.walkInModal
+}: VisitUsModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

@@ -1,14 +1,17 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { siteConfig } from '@/content/site-config';
 import { ChevronDown } from 'lucide-react';
 import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
 import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
 import { useParallax } from '@/lib/hooks/useParallax';
+import type { HeroContent } from '@/types/content';
 
-export function Hero() {
-  const { hero } = siteConfig;
+interface HeroProps {
+  hero: HeroContent;
+}
+
+export function Hero({ hero }: HeroProps) {
   const { ref: parallaxRef, y } = useParallax(100);
   const shouldReduceMotion = useReducedMotion();
 

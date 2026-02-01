@@ -3,12 +3,15 @@
 import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { TiltingGlass } from '@/components/shared/TiltingGlass';
 import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/content/site-config';
 import { fadeIn } from '@/lib/animations';
 import { ExternalLink } from 'lucide-react';
+import type { HungryContent } from '@/types/content';
 
-export function Hungry() {
-  const { hungry } = siteConfig;
+interface HungryProps {
+  hungry: HungryContent;
+}
+
+export function Hungry({ hungry }: HungryProps) {
 
   return (
     <section className="py-section-lg xl:pt-0 bg-cream text-navy">

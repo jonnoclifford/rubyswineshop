@@ -1,13 +1,17 @@
 'use client';
 
 import { AnimatedSection } from '@/components/shared/AnimatedSection';
-import { siteConfig } from '@/content/site-config';
 import { slideInLeft, slideInRight, fadeIn } from '@/lib/animations';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import Image from 'next/image';
+import type { FindUsContent, BusinessInfo } from '@/types/content';
 
-export function FindUs() {
-  const { findUs, business } = siteConfig;
+interface FindUsProps {
+  findUs: FindUsContent;
+  business: BusinessInfo;
+}
+
+export function FindUs({ findUs, business }: FindUsProps) {
 
   return (
     <section id="find-us" className="py-section-lg bg-cream">
@@ -20,19 +24,21 @@ export function FindUs() {
 
         <div className="max-w-6xl mx-auto">
           {/* Storefront Image */}
-          <AnimatedSection variants={fadeIn}>
-            <div className="relative aspect-[16/9] lg:aspect-[21/9] rounded-lg overflow-hidden shadow-xl mb-12">
-              <Image
-                src="/images/exterior-albion.webp"
-                alt="Ruby's Wine Shop in the historic Albion Building on Sandgate Road"
-                fill
-                className="object-cover object-bottom"
-                sizes="(max-width: 1024px) 100vw, 80vw"
-                loading="lazy"
-                quality={90}
-              />
-            </div>
-          </AnimatedSection>
+          {findUs.image && (
+            <AnimatedSection variants={fadeIn}>
+              <div className="relative aspect-[16/9] lg:aspect-[21/9] rounded-lg overflow-hidden shadow-xl mb-12">
+                <Image
+                  src={findUs.image.src}
+                  alt={findUs.image.alt}
+                  fill
+                  className="object-cover object-bottom"
+                  sizes="(max-width: 1024px) 100vw, 80vw"
+                  loading="lazy"
+                  quality={90}
+                />
+              </div>
+            </AnimatedSection>
+          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map */}

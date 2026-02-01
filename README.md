@@ -54,16 +54,49 @@ npm run dev
 
 ## Content Management
 
-All website content is centralized in `src/content/site-config.ts`. You can update:
+### Tina CMS Admin Interface
 
+The site uses **Tina CMS** for visual content editing. To access the admin interface:
+
+1. Start the development server with Tina:
+
+```bash
+npm run dev
+```
+
+This runs both Next.js and the Tina CMS server.
+
+2. Access the admin at: **[http://localhost:3000/admin](http://localhost:3000/admin)**
+
+The admin interface provides a visual editor for:
 - Business information (name, address, hours, contact)
 - Menu items (wines by glass, by bottle, snacks)
 - Events and what's on
 - About section story
 - FAQ items
-- And more!
+- SEO settings
+- Images and media
 
-No code changes required - just update the content file and redeploy.
+### Direct Content Editing
+
+Alternatively, you can edit content directly in `src/content/site-config.json`. Changes will be reflected immediately during development.
+
+### Environment Variables for Tina
+
+The `.env.local` file includes Tina CMS configuration:
+
+```env
+# Tina CMS - Local Development Mode
+TINA_PUBLIC_IS_LOCAL=true
+NEXT_PUBLIC_TINA_CLIENT_ID=dummy-client-id
+TINA_TOKEN=dummy-token
+NEXT_PUBLIC_TINA_BRANCH=main
+```
+
+For production with Tina Cloud:
+1. Sign up at [tina.io](https://tina.io)
+2. Create a new project
+3. Replace the dummy values with your actual credentials
 
 ## Asset Checklist
 

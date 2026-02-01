@@ -2,12 +2,15 @@
 
 import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { EventCard } from '@/components/shared/EventCard';
-import { siteConfig } from '@/content/site-config';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import type { WhatsOnContent } from '@/types/content';
 
-export function WhatsOn() {
-  const { whatsOn } = siteConfig;
+interface WhatsOnProps {
+  whatsOn: WhatsOnContent;
+}
+
+export function WhatsOn({ whatsOn }: WhatsOnProps) {
 
   return (
     <section id="whats-on" className="py-section-lg bg-terracotta">

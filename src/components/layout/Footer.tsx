@@ -1,9 +1,12 @@
-import { siteConfig } from '@/content/site-config';
 import { Instagram, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
+import type { BusinessInfo } from '@/types/content';
 
-export function Footer() {
-  const { business } = siteConfig;
+interface FooterProps {
+  business: BusinessInfo;
+}
+
+export function Footer({ business }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (

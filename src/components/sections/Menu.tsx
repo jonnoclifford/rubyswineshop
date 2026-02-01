@@ -2,12 +2,15 @@
 
 import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { WineCard } from '@/components/shared/WineCard';
-import { siteConfig } from '@/content/site-config';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import type { MenuContent } from '@/types/content';
 
-export function Menu() {
-  const { menu } = siteConfig;
+interface MenuProps {
+  menu: MenuContent;
+}
+
+export function Menu({ menu }: MenuProps) {
 
   return (
     <section id="menu" className="py-section-lg bg-cream">

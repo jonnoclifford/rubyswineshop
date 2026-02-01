@@ -1,12 +1,15 @@
 'use client';
 
 import { AnimatedSection } from '@/components/shared/AnimatedSection';
-import { siteConfig } from '@/content/site-config';
 import { slideInLeft, slideInRight } from '@/lib/animations';
 import Image from 'next/image';
+import type { AboutContent } from '@/types/content';
 
-export function About() {
-  const { about } = siteConfig;
+interface AboutProps {
+  about: AboutContent;
+}
+
+export function About({ about }: AboutProps) {
 
   return (
     <section id="about" className="py-section-lg bg-cream">
@@ -16,8 +19,8 @@ export function About() {
           <AnimatedSection variants={slideInLeft} className="lg:col-span-2">
             <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0">
               <Image
-                src="/images/ruby-and-owner.webp"
-                alt="Ruby the border collie with her owner at Ruby's Wine Shop"
+                src={about.image.src}
+                alt={about.image.alt}
                 fill
                 className="object-cover object-[40%]"
                 sizes="(max-width: 1024px) 100vw, 40vw"

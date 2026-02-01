@@ -5,17 +5,15 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { MagneticButton } from '@/components/ui/magnetic-button';
-import { siteConfig } from '@/content/site-config';
 import { VisitUsModal } from '@/components/shared/VisitUsModal';
+import type { BusinessInfo, HeaderContent } from '@/types/content';
 
-const navLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Menu', href: '#menu' },
-  { name: "What's On", href: '#whats-on' },
-  { name: 'Find Us', href: '#find-us' },
-];
+interface HeaderProps {
+  header: HeaderContent;
+  business: BusinessInfo;
+}
 
-export function Header() {
+export function Header({ header, business }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,8 +60,8 @@ export function Header() {
               }}
             >
               <Image
-                src="/logo-text.png"
-                alt={siteConfig.business.name}
+                src={header.logo}
+                alt={business.name}
                 width={180}
                 height={80}
                 className="h-12 w-auto object-contain"
@@ -73,7 +71,7 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
+              {header.navigation.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -92,7 +90,7 @@ export function Header() {
                 onClick={() => setIsModalOpen(true)}
                 className="bg-terracotta hover:bg-terracotta-dark text-cream uppercase"
               >
-                Visit Us
+                {header.ctaText}
               </MagneticButton>
             </nav>
 
@@ -114,7 +112,7 @@ export function Header() {
           {isMobileMenuOpen && (
             <nav className="md:hidden pb-6 pt-2 border-t border-navy/10">
               <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
+                {header.navigation.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
@@ -134,7 +132,7 @@ export function Header() {
                   }}
                   className="bg-terracotta hover:bg-terracotta-dark text-cream w-full uppercase"
                 >
-                  Visit Us
+                  {header.ctaText}
                 </Button>
               </div>
             </nav>
@@ -142,7 +140,7 @@ export function Header() {
         </div>
       </header>
 
-      <VisitUsModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <VisitUsModal open={isModalOpen} onOpenChange={setIsModalOpen} business={business} />
     </>
   );
 }

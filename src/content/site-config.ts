@@ -1,6 +1,17 @@
 import { SiteConfig } from '@/types/content';
 
-export const siteConfig: SiteConfig = {
+const siteConfig: SiteConfig = {
+  header: {
+    logo: '/logo-text.png',
+    navigation: [
+      { name: 'About', href: '#about' },
+      { name: 'Menu', href: '#menu' },
+      { name: "What's On", href: '#whats-on' },
+      { name: 'Find Us', href: '#find-us' },
+    ],
+    ctaText: 'Visit Us',
+  },
+
   business: {
     name: "Ruby's Wine Shop",
     tagline: "Natural wines & good vibes in Albion",
@@ -60,8 +71,8 @@ export const siteConfig: SiteConfig = {
       "With over 100 bottles on the shelf and 6 to 8 rotating daily pours, including our own house-made Pet Nat, there is always something new to try. We keep things simple with 20 seats and a walk-ins only policy. Bring your own snacks or scan a QR code to have modern Turkish meze from our neighbors at Olive Thyme delivered straight to your stool.",
     ],
     image: {
-      src: "/images/ruby-portrait.jpg",
-      alt: "Portrait of Ruby, founder of Ruby's Wine Bar",
+      src: "/images/ruby-and-owner.webp",
+      alt: "Ruby the border collie with her owner at Ruby's Wine Shop",
     },
   },
 
@@ -198,6 +209,10 @@ export const siteConfig: SiteConfig = {
     ],
     partnerName: "Olive Thyme",
     partnerLink: "https://www.olivethyme.com.au",
+    image: {
+      src: "/images/food-partner.jpg",
+      alt: "Delicious food from Olive Thyme",
+    },
   },
 
   whatsOn: {
@@ -255,6 +270,10 @@ export const siteConfig: SiteConfig = {
         answer: "There's street parking on Sandgate Road and surrounding streets. It's free after 7 PM on weekdays and all day on weekends. Albion train station is a 5-minute walk if you're taking public transport.",
       },
     ],
+    image: {
+      src: "/images/storefront-window.jpg",
+      alt: "Ruby's Wine Shop storefront window with logo",
+    },
   },
 
   walkInModal: {
@@ -271,6 +290,10 @@ export const siteConfig: SiteConfig = {
     heading: "Find Us",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.123!2d153.0435!3d-27.4305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDI1JzQ5LjgiUyAxNTPCsDAyJzM2LjYiRQ!5e0!3m2!1sen!2sau!4v1234567890",
     contactHeading: "Get in Touch",
+    image: {
+      src: "/images/exterior-albion.webp",
+      alt: "Ruby's Wine Shop in the historic Albion Building on Sandgate Road",
+    },
   },
 
   seo: {
@@ -292,3 +315,9 @@ export const siteConfig: SiteConfig = {
     ogImage: "/images/og-image.jpg",
   },
 };
+
+// Export for existing components (backward compatibility)
+export { siteConfig };
+
+// Default export for Tina CMS
+export default siteConfig;
