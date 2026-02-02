@@ -16,8 +16,9 @@ import { WineForm } from '@/components/admin/WineForm';
 import { EventForm } from '@/components/admin/EventForm';
 import { FAQForm } from '@/components/admin/FAQForm';
 import { SiteConfig } from '@/types/content';
-import { Eye, RefreshCw, LogOut, Building2, Sparkles, Wine, Calendar, HelpCircle } from 'lucide-react';
+import { Eye, RefreshCw, LogOut, Building2, Sparkles, Wine, Calendar, HelpCircle, ImageIcon } from 'lucide-react';
 import type { GitHubUser } from '@/lib/auth';
+import { ImageManager } from '@/components/admin/ImageManager';
 
 interface AdminDashboardProps {
   user: GitHubUser;
@@ -204,7 +205,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
         </Card>
 
         <Tabs defaultValue="business" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5 lg:w-auto lg:inline-grid bg-white shadow-md border border-gray-100 p-1">
+          <TabsList className="grid w-full grid-cols-6 lg:w-auto lg:inline-grid bg-white shadow-md border border-gray-100 p-1">
             <TabsTrigger value="business" className="gap-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-terracotta data-[state=active]:to-terracotta/80 data-[state=active]:text-white transition-all">
               <Building2 className="h-4 w-4" />
               <span className="hidden sm:inline">Business Info</span>
@@ -224,6 +225,10 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
             <TabsTrigger value="faq" className="gap-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-terracotta data-[state=active]:to-terracotta/80 data-[state=active]:text-white transition-all">
               <HelpCircle className="h-4 w-4" />
               <span className="hidden sm:inline">FAQ</span>
+            </TabsTrigger>
+            <TabsTrigger value="images" className="gap-2 data-[state=active]:bg-gradient-to-br data-[state=active]:from-terracotta data-[state=active]:to-terracotta/80 data-[state=active]:text-white transition-all">
+              <ImageIcon className="h-4 w-4" />
+              <span className="hidden sm:inline">Images</span>
             </TabsTrigger>
           </TabsList>
 
@@ -349,6 +354,27 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                 initialData={siteConfig.faq}
                 onSave={(data) => handleSectionSave('faq', data)}
               />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="images">
+            <div className="space-y-4">
+              <Card className="shadow-md border-terracotta/10">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-gradient-to-br from-terracotta to-terracotta/80 p-2 rounded-lg">
+                      <ImageIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl font-sans text-navy">Image Library</CardTitle>
+                      <CardDescription className="mt-1">
+                        Upload and manage images for your website. Copy image paths to use in content or share on social media.
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+              <ImageManager />
             </div>
           </TabsContent>
         </Tabs>

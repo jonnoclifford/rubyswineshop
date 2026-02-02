@@ -20,6 +20,7 @@ const GITHUB_OWNER = process.env.GITHUB_OWNER || 'jonnoclifford';
 const GITHUB_REPO = process.env.GITHUB_REPO || 'rubyswineshop';
 const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
 const CONFIG_FILE_PATH = 'src/content/site-config.json';
+const IMAGES_DIR_PATH = 'public/images';
 
 // GitHub API base URL
 const GITHUB_API_BASE = 'https://api.github.com';
@@ -103,6 +104,26 @@ interface GitHubFileResponse {
   content: string; // base64 encoded
   encoding: string;
   download_url: string;
+  _links: {
+    self: string;
+    git: string;
+    html: string;
+  };
+}
+
+/**
+ * Response from GitHub's get directory contents API
+ */
+interface GitHubDirectoryItem {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string | null;
+  type: 'file' | 'dir';
   _links: {
     self: string;
     git: string;
@@ -448,5 +469,124 @@ export async function testConnection(): Promise<{
         ? error.message
         : 'Unknown error connecting to GitHub API',
     };
+  }
+}
+
+/**
+ * Upload an image file to the GitHub repository
+ *
+ * @param file - The image file to upload
+ * @param filename - The desired filename for the image
+ * @returns Object containing the path and SHA of the uploaded image
+ * @throws {GitHubAPIError} If the upload fails
+ */
+export async function uploadImage(
+  file: File,
+  filename: string
+): Promise<{ path: string; sha: string }> {
+  try {
+    // Convert file to base64
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const content = buffer.toString('base64');
+
+    // Construct the file path
+    const filePath = `${IMAGES_DIR_PATH}/${filename}`;
+
+    // Create/update file via GitHub API
+    const endpoint = `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}`;
+    const response = await githubRequest<GitHubCommitResponse>(endpoint, {
+      method: 'PUT',
+      body: JSON.stringify({
+        message: `Upload image: ${filename}`,
+        content,
+        branch: GITHUB_BRANCH,
+      }),
+    });
+
+    return {
+      path: filePath,
+      sha: response.content.sha,
+    };
+  } catch (error) {
+    if (error instanceof GitHubAPIError) {
+      throw error;
+    }
+    throw new GitHubAPIError(
+      `Failed to upload image: ${error instanceof Error ? error.message : 'Unknown error'}`
+    );
+  }
+}
+
+/**
+ * Delete an image file from the GitHub repository
+ *
+ * @param filename - The filename of the image to delete
+ * @throws {GitHubAPIError} If the deletion fails
+ */
+export async function deleteImage(filename: string): Promise<void> {
+  try {
+    // Construct the file path
+    const filePath = `${IMAGES_DIR_PATH}/${filename}`;
+
+    // Get the file's current SHA (required for deletion)
+    const endpoint = `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+    const fileData = await githubRequest<GitHubFileResponse>(endpoint);
+
+    // Delete the file
+    await githubRequest(endpoint, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        message: `Delete image: ${filename}`,
+        sha: fileData.sha,
+        branch: GITHUB_BRANCH,
+      }),
+    });
+  } catch (error) {
+    if (error instanceof GitHubAPIError) {
+      throw error;
+    }
+    throw new GitHubAPIError(
+      `Failed to delete image: ${error instanceof Error ? error.message : 'Unknown error'}`
+    );
+  }
+}
+
+/**
+ * List all images in the images directory
+ *
+ * @returns Array of image metadata objects
+ * @throws {GitHubAPIError} If listing images fails
+ */
+export async function listImages(): Promise<
+  Array<{ name: string; path: string; sha: string; size: number }>
+> {
+  try {
+    const endpoint = `/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${IMAGES_DIR_PATH}?ref=${GITHUB_BRANCH}`;
+    const items = await githubRequest<GitHubDirectoryItem[]>(endpoint);
+
+    // Filter for image files
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg'];
+    const images = items
+      .filter((item) => {
+        if (item.type !== 'file') return false;
+        const ext = item.name.toLowerCase().match(/\.[^.]+$/)?.[0];
+        return ext && imageExtensions.includes(ext);
+      })
+      .map((item) => ({
+        name: item.name,
+        path: item.path,
+        sha: item.sha,
+        size: item.size,
+      }));
+
+    return images;
+  } catch (error) {
+    if (error instanceof GitHubAPIError) {
+      throw error;
+    }
+    throw new GitHubAPIError(
+      `Failed to list images: ${error instanceof Error ? error.message : 'Unknown error'}`
+    );
   }
 }
