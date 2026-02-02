@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Upload, Trash2, Copy, Image as ImageIcon, X, Check } from 'lucide-react';
+import imageCompression from 'browser-image-compression';
 
 interface ImageFile {
   filename: string;
@@ -135,6 +136,26 @@ export function ImageManager() {
     setPreviewFiles(prev => prev.filter((_, i) => i !== index));
   };
 
+  const optimizeImage = async (file: File): Promise<File> => {
+    try {
+      const options = {
+        maxSizeMB: 1, // Max 1MB
+        maxWidthOrHeight: 2000, // Max dimension
+        useWebWorker: true,
+        fileType: 'image/webp', // Convert to WebP
+      };
+
+      const compressedFile = await imageCompression(file, options);
+
+      // Rename to .webp extension
+      const newName = file.name.replace(/\.[^.]+$/, '.webp');
+      return new File([compressedFile], newName, { type: 'image/webp' });
+    } catch (error) {
+      console.error('Optimization failed, using original:', error);
+      return file; // Fallback to original if optimization fails
+    }
+  };
+
   const uploadFiles = async () => {
     if (previewFiles.length === 0) return;
 
@@ -145,8 +166,20 @@ export function ImageManager() {
       setUploadProgress(prev => [...prev, { filename: sanitizedName, progress: 0 }]);
 
       try {
+        // Optimize image before upload
+        setUploadProgress(prev =>
+          prev.map(p => p.filename === sanitizedName ? { ...p, progress: 10 } : p)
+        );
+
+        const optimizedFile = await optimizeImage(file);
+        const finalName = sanitizeFilename(optimizedFile.name); // Re-sanitize after rename
+
+        setUploadProgress(prev =>
+          prev.map(p => p.filename === sanitizedName ? { ...p, progress: 30, filename: finalName } : p)
+        );
+
         const formData = new FormData();
-        formData.append('file', file, sanitizedName);
+        formData.append('file', optimizedFile, finalName);
 
         const response = await fetch('/api/admin/images/upload', {
           method: 'POST',
@@ -156,15 +189,15 @@ export function ImageManager() {
         if (response.ok) {
           // Update progress to 100%
           setUploadProgress(prev =>
-            prev.map(p => p.filename === sanitizedName ? { ...p, progress: 100 } : p)
+            prev.map(p => p.filename === finalName ? { ...p, progress: 100 } : p)
           );
-          return { success: true, filename: sanitizedName };
+          return { success: true, filename: finalName };
         } else {
           const error = await response.json();
-          return { success: false, filename: sanitizedName, error: error.error };
+          return { success: false, filename: finalName, error: error.error };
         }
       } catch (error) {
-        return { success: false, filename: sanitizedName, error: 'Upload failed' };
+        return { success: false, filename: finalName, error: 'Upload failed' };
       }
     });
 
@@ -272,7 +305,7 @@ export function ImageManager() {
             Upload Images
           </CardTitle>
           <CardDescription>
-            Upload images to use in your content. Max 5MB per file. Accepted: JPG, PNG, WebP, GIF, SVG
+            Upload images to use in your content. Images are automatically optimized (resized, compressed, converted to WebP) before upload. Max 5MB per file.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
