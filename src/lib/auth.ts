@@ -191,7 +191,20 @@ export function isUserAuthorized(username: string): boolean {
     return false;
   }
 
-  return AUTHORIZED_USERS.includes(username);
+  // Case-insensitive comparison and trim whitespace
+  const normalizedUsername = username.toLowerCase().trim();
+  const isAuthorized = AUTHORIZED_USERS.some(
+    user => user.toLowerCase().trim() === normalizedUsername
+  );
+
+  console.log('Authorization check:', {
+    username,
+    normalizedUsername,
+    authorizedUsers: AUTHORIZED_USERS,
+    isAuthorized
+  });
+
+  return isAuthorized;
 }
 
 /**
