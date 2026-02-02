@@ -10,7 +10,7 @@ import { getCurrentUser } from '@/lib/auth';
 import AdminDashboard from '@/components/admin/AdminDashboard';
 
 export const metadata = {
-  title: 'Admin Dashboard - Ruby\'s Wine Bar',
+  title: 'Shop Dashboard - Ruby\'s Wine Bar',
   description: 'Content management dashboard',
 };
 
