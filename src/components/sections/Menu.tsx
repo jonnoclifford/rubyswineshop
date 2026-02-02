@@ -12,7 +12,7 @@ interface MenuProps {
 
 export function Menu({ menu }: MenuProps) {
   return (
-    <section id="menu" className="pt-section-lg pb-12 bg-cream">
+    <section id="menu" className="pt-section-lg bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
           <h2 className="font-serif text-display-md text-navy mb-12 text-center tracking-normal">
