@@ -126,15 +126,15 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
       {/* Admin Header */}
       <header className="bg-gradient-to-r from-navy via-navy to-terracotta/90 border-b border-terracotta/20 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
-                <Wine className="h-6 w-6 text-cream" />
+              <div className="bg-white/10 p-2.5 rounded-lg backdrop-blur-sm">
+                <Wine className="h-7 w-7 text-cream" />
               </div>
               <div>
-                <h1 className="text-2xl font-serif font-bold text-cream">Ruby&apos;s Admin</h1>
+                <h1 className="text-2xl font-serif font-bold text-cream">Ruby&apos;s Wine Bar Admin</h1>
                 <p className="text-xs text-cream/70">
-                  Content Management System
+                  Content Management System - by Jaunt Studio
                 </p>
               </div>
             </div>
@@ -365,7 +365,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
               </p>
             </div>
             <p className="text-xs text-cream/60">
-              Powered by custom CMS · Need help? Contact your developer
+              Powered by Jaunt Studio CMS · Need help? Contact your developer
             </p>
           </div>
         </div>
