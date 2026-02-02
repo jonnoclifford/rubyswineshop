@@ -161,6 +161,7 @@ export function ImageManager() {
 
     const uploadPromises = previewFiles.map(async (file) => {
       const sanitizedName = sanitizeFilename(file.name);
+      let finalName = sanitizedName; // Default to original name
 
       // Add to upload progress
       setUploadProgress(prev => [...prev, { filename: sanitizedName, progress: 0 }]);
@@ -172,7 +173,7 @@ export function ImageManager() {
         );
 
         const optimizedFile = await optimizeImage(file);
-        const finalName = sanitizeFilename(optimizedFile.name); // Re-sanitize after rename
+        finalName = sanitizeFilename(optimizedFile.name); // Re-sanitize after rename
 
         setUploadProgress(prev =>
           prev.map(p => p.filename === sanitizedName ? { ...p, progress: 30, filename: finalName } : p)
