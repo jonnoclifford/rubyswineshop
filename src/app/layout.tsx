@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Prata, DM_Sans } from 'next/font/google';
 import './globals.css';
-import { getSiteConfig } from '@/lib/tina-client';
+import { getSiteConfig } from '@/lib/cms';
 
 const prata = Prata({
   weight: ['400'],
@@ -68,7 +68,7 @@ export default async function RootLayout({
 }>) {
   const siteConfig = await getSiteConfig();
 
-  // Generate schema using data from Tina
+  // Generate schema using data from CMS
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BarOrPub',

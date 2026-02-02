@@ -1,0 +1,290 @@
+# Decap CMS Configuration for Ruby's Wine Bar
+# Documentation: https://decapcms.org/docs/configuration-options/
+
+# Backend configuration
+backend:
+  name: github
+  repo: jonnoclifford/rubyswineshop
+  branch: main
+  base_url: https://api.netlify.com # For Netlify Identity (can be changed for other OAuth providers)
+
+# Publish mode - editorial workflow allows draft/review/publish workflow
+# Set to 'simple' for direct publishing
+publish_mode: editorial_workflow
+
+# Media files configuration
+media_folder: "public/images"
+public_folder: "/images"
+
+# Local backend for development (run `npx decap-server` to use)
+local_backend: true
+
+# Collections define the structure of the different types of content
+collections:
+  # Site Configuration - Single file containing all site content
+  - name: "siteConfig"
+    label: "Site Configuration"
+    files:
+      - name: "config"
+        label: "Site Config"
+        file: "src/content/site-config.json"
+        fields:
+          # Header & Navigation
+          - label: "Header & Navigation"
+            name: "header"
+            widget: "object"
+            fields:
+              - { label: "Logo Image", name: "logo", widget: "image", required: true }
+              - label: "Navigation Links"
+                name: "navigation"
+                widget: "list"
+                fields:
+                  - { label: "Link Text", name: "name", widget: "string", required: true }
+                  - { label: "Link Target", name: "href", widget: "string", required: true }
+              - { label: "CTA Button Text", name: "ctaText", widget: "string", required: true }
+
+          # Business Information
+          - label: "Business Information"
+            name: "business"
+            widget: "object"
+            fields:
+              - { label: "Business Name", name: "name", widget: "string", required: true }
+              - { label: "Tagline", name: "tagline", widget: "string", required: true }
+              - label: "Address"
+                name: "address"
+                widget: "object"
+                fields:
+                  - { label: "Street Address", name: "street", widget: "string", required: true }
+                  - { label: "Suburb", name: "suburb", widget: "string", required: true }
+                  - { label: "State", name: "state", widget: "string", required: true }
+                  - { label: "Postcode", name: "postcode", widget: "string", required: true }
+                  - { label: "Country", name: "country", widget: "string", required: true }
+              - label: "Contact Information"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Phone Number", name: "phone", widget: "string", required: true }
+                  - { label: "Email Address", name: "email", widget: "string", required: true }
+                  - { label: "Instagram Handle", name: "instagram", widget: "string", required: true }
+              - label: "Business Hours"
+                name: "hours"
+                widget: "object"
+                fields:
+                  - { label: "Monday", name: "Monday", widget: "string" }
+                  - { label: "Tuesday", name: "Tuesday", widget: "string" }
+                  - { label: "Wednesday", name: "Wednesday", widget: "string" }
+                  - { label: "Thursday", name: "Thursday", widget: "string" }
+                  - { label: "Friday", name: "Friday", widget: "string" }
+                  - { label: "Saturday", name: "Saturday", widget: "string" }
+                  - { label: "Sunday", name: "Sunday", widget: "string" }
+              - label: "Map Coordinates"
+                name: "coordinates"
+                widget: "object"
+                fields:
+                  - { label: "Latitude", name: "lat", widget: "number", value_type: "float", required: true }
+                  - { label: "Longitude", name: "lng", widget: "number", value_type: "float", required: true }
+
+          # Hero Section
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", required: true }
+              - { label: "Subheadline", name: "subheadline", widget: "text", required: true }
+              - label: "Call to Actions"
+                name: "ctas"
+                widget: "object"
+                fields:
+                  - label: "Primary CTA"
+                    name: "primary"
+                    widget: "object"
+                    fields:
+                      - { label: "Button Text", name: "text", widget: "string", required: true }
+                      - label: "Action Type"
+                        name: "action"
+                        widget: "select"
+                        options: ["modal", "scroll"]
+                        required: true
+                      - { label: "Target (for scroll action)", name: "target", widget: "string", required: false }
+                  - label: "Secondary CTA"
+                    name: "secondary"
+                    widget: "object"
+                    fields:
+                      - { label: "Button Text", name: "text", widget: "string", required: true }
+                      - label: "Action Type"
+                        name: "action"
+                        widget: "select"
+                        options: ["modal", "scroll"]
+                        required: true
+                      - { label: "Target (for scroll action)", name: "target", widget: "string", required: false }
+              - label: "Hero Images"
+                name: "images"
+                widget: "object"
+                fields:
+                  - { label: "Desktop Image", name: "desktop", widget: "image", required: true }
+                  - { label: "Mobile Image", name: "mobile", widget: "image", required: true }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: true }
+
+          # About Section
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - label: "Story Paragraphs"
+                name: "story"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - label: "About Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image", required: true }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: true }
+
+          # Menu Section
+          - label: "Menu Section"
+            name: "menu"
+            widget: "object"
+            fields:
+              - { label: "Main Heading", name: "heading", widget: "string", required: true }
+              - label: "By the Glass"
+                name: "byTheGlass"
+                widget: "object"
+                fields:
+                  - { label: "Section Heading", name: "heading", widget: "string", required: true }
+                  - label: "Glass Wines"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Wine Name", name: "name", widget: "string", required: true }
+                      - { label: "Producer", name: "producer", widget: "string" }
+                      - { label: "Region", name: "region", widget: "string" }
+                      - { label: "Price", name: "price", widget: "string", required: true }
+                      - { label: "Description", name: "description", widget: "text" }
+              - label: "By the Bottle"
+                name: "byTheBottle"
+                widget: "object"
+                fields:
+                  - { label: "Section Heading", name: "heading", widget: "string", required: true }
+                  - label: "Wine Categories"
+                    name: "categories"
+                    widget: "list"
+                    fields:
+                      - { label: "Category Name", name: "name", widget: "string", required: true }
+                      - label: "Wines"
+                        name: "items"
+                        widget: "list"
+                        fields:
+                          - { label: "Wine Name", name: "name", widget: "string", required: true }
+                          - { label: "Producer", name: "producer", widget: "string" }
+                          - { label: "Region", name: "region", widget: "string" }
+                          - { label: "Price", name: "price", widget: "string", required: true }
+                          - { label: "Description", name: "description", widget: "text" }
+              - label: "Snacks"
+                name: "snacks"
+                widget: "object"
+                fields:
+                  - { label: "Section Heading", name: "heading", widget: "string", required: true }
+                  - label: "Snack Items"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Item Name", name: "name", widget: "string", required: true }
+                      - { label: "Description", name: "description", widget: "text" }
+                      - { label: "Price", name: "price", widget: "string", required: true }
+
+          # Hungry Section (Partner Food)
+          - label: "Hungry Section"
+            name: "hungry"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - label: "Description Paragraphs"
+                name: "description"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Partner Name", name: "partnerName", widget: "string", required: true }
+              - { label: "Partner Link", name: "partnerLink", widget: "string" }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image", required: true }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: true }
+
+          # What's On Section
+          - label: "What's On Section"
+            name: "whatsOn"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - label: "Events"
+                name: "events"
+                widget: "list"
+                fields:
+                  - { label: "Event Title", name: "title", widget: "string", required: true }
+                  - { label: "Date", name: "date", widget: "string", required: true }
+                  - { label: "Time", name: "time", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text", required: true }
+                  - { label: "Recurring Event", name: "recurring", widget: "boolean", default: false }
+
+          # FAQ Section
+          - label: "FAQ Section"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - label: "FAQ Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "question", widget: "string", required: true }
+                  - { label: "Answer", name: "answer", widget: "text", required: true }
+              - label: "Sidebar Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image", required: true }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: true }
+
+          # Walk-In Modal
+          - label: "Walk-In Modal"
+            name: "walkInModal"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - label: "Message Paragraphs"
+                name: "message"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+              - { label: "Hours Heading", name: "hoursHeading", widget: "string", required: true }
+              - { label: "CTA Button Text", name: "ctaText", widget: "string", required: true }
+
+          # Find Us Section
+          - label: "Find Us Section"
+            name: "findUs"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", required: true }
+              - { label: "Google Maps Embed URL", name: "mapEmbedUrl", widget: "text", required: true }
+              - { label: "Contact Heading", name: "contactHeading", widget: "string", required: true }
+              - label: "Exterior Image"
+                name: "image"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "src", widget: "image", required: true }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: true }
+
+          # SEO Settings
+          - label: "SEO Settings"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Page Title", name: "title", widget: "string", required: true }
+              - { label: "Meta Description", name: "description", widget: "text", required: true }
+              - label: "Keywords"
+                name: "keywords"
+                widget: "list"
+                field: { label: "Keyword", name: "keyword", widget: "string" }
+              - { label: "Open Graph Image", name: "ogImage", widget: "image", required: true }

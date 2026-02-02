@@ -8,21 +8,20 @@ import { Hungry } from '@/components/sections/Hungry';
 import { WhatsOn } from '@/components/sections/WhatsOn';
 import { FAQ } from '@/components/sections/FAQ';
 import { FindUs } from '@/components/sections/FindUs';
-import { getSiteConfig } from '@/lib/tina-client';
+import { getSiteConfig } from '@/lib/cms';
 
 /**
  * Home Page Component
  *
  * This is the main landing page for Ruby's Wine Bar.
- * It fetches content from Tina CMS at build time using Next.js 15 App Router
+ * It fetches content from the CMS at build time using Next.js 15 App Router
  * server-side rendering capabilities.
  *
  * The page uses static generation for optimal performance, with content
- * being fetched from Tina CMS during the build process. If the CMS is
- * unavailable, it falls back to the static configuration in /src/content/site-config.ts
+ * being managed through Decap CMS.
  */
 export default async function Home() {
-  // Fetch site configuration from Tina CMS
+  // Fetch site configuration from CMS
   // This happens at build time for static generation
   const siteConfig = await getSiteConfig();
 
