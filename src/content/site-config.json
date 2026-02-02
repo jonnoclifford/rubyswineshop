@@ -301,7 +301,7 @@
       "colorScheme": "light"
     },
     "menu": {
-      "enabled": false,
+      "enabled": true,
       "order": 2,
       "colorScheme": "dark"
     },
@@ -311,7 +311,7 @@
       "colorScheme": "light"
     },
     "whatsOn": {
-      "enabled": true,
+      "enabled": false,
       "order": 4,
       "colorScheme": "terracotta"
     },
