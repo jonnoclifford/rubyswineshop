@@ -318,7 +318,7 @@
     "faq": {
       "enabled": true,
       "order": 5,
-      "colorScheme": "dark"
+      "colorScheme": "light"
     },
     "findUs": {
       "enabled": true,
