@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// Import Tina types for CMS integration
-import type {
-  SiteConfig as TinaSiteConfig,
-  Maybe,
-} from '../../.tina/__generated__/types';
+// Content type definitions for Ruby's Wine Bar
+// These match the structure in site-config.ts
 
-// Base content types - these match the Tina schema
+// Base content types
 export interface HeaderContent {
   logo: string;
   navigation: {
