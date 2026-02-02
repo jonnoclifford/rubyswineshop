@@ -45,49 +45,13 @@ const TINA_CONFIG = {
  * ```
  */
 export async function getSiteConfig(): Promise<SiteConfig> {
-  // For now, always use fallback in local mode
-  // The Tina admin interface will still work through the dev server at /admin
-  if (process.env.TINA_PUBLIC_IS_LOCAL === 'true') {
-    if (TINA_CONFIG.logErrors) {
-      console.log('Local mode: Using fallback configuration. Admin edits will work at /admin');
-    }
-    return fallbackConfig as SiteConfig;
+  // Always use fallback configuration for now
+  // The Tina admin interface will still work through the dev server at /admin for local development
+  if (TINA_CONFIG.logErrors && process.env.NODE_ENV === 'development') {
+    console.log('Using fallback configuration. Local admin available at /admin');
   }
 
-  // For cloud mode, try to use Tina client
-  try {
-    const clientModule = await import('../../.tina/__generated__/client');
-    const client = clientModule.client || clientModule.default;
-
-    if (!client || !client.queries?.siteConfig) {
-      throw new Error('Tina client not available or siteConfig query not found');
-    }
-
-    const result = await client.queries.siteConfig({
-      relativePath: TINA_CONFIG.siteConfigPath,
-    });
-
-    if (!result?.data?.siteConfig) {
-      throw new Error('No site config data returned from TinaCMS');
-    }
-
-    // Remove Tina metadata and return clean data
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { _sys, _values, id, __typename, ...cleanData } = result.data.siteConfig;
-
-    return cleanData as SiteConfig;
-  } catch (error) {
-    if (TINA_CONFIG.logErrors) {
-      console.error('Error fetching site config from TinaCMS:', error);
-      console.log('Using fallback configuration');
-    }
-
-    if (TINA_CONFIG.useFallback) {
-      return fallbackConfig as SiteConfig;
-    }
-
-    throw error;
-  }
+  return fallbackConfig as SiteConfig;
 }
 
 /**
