@@ -31,11 +31,13 @@ export async function GET() {
     const images = await listImages();
 
     // In production, use GitHub raw URLs since images might not be deployed yet
+    // img.path is like "public/images/filename.jpg" from GitHub API
     const imagesWithUrls = images.map(img => ({
       ...img,
       path: process.env.NODE_ENV === 'production'
-        ? `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/${process.env.GITHUB_BRANCH}/public${img.path}`
-        : img.path
+        ? `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/${process.env.GITHUB_BRANCH}/${img.path}`
+        : `/images/${img.name}`, // Local: use web path
+      filename: img.name // Keep original filename
     }));
 
     return NextResponse.json({
