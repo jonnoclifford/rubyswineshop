@@ -132,7 +132,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                 <Wine className="h-7 w-7 text-cream" />
               </div>
               <div>
-                <h1 className="text-2xl font-serif font-bold text-cream">Ruby&apos;s Wine Bar Admin</h1>
+                <h1 className="text-2xl font-sans font-bold text-cream">Ruby&apos;s Wine Bar Admin</h1>
                 <p className="text-xs text-cream/70">
                   Content Management System - by Jaunt Studio
                 </p>
@@ -193,7 +193,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
               <div className="flex-1">
-                <CardTitle className="text-2xl font-serif text-navy mb-2">Welcome to Your Admin Panel</CardTitle>
+                <CardTitle className="text-2xl font-sans text-navy mb-2">Welcome to Your Admin Panel</CardTitle>
                 <CardDescription className="text-base">
                   Manage your website content here. Changes are saved automatically and deployed live within minutes.
                   Use the <strong>Preview</strong> button to see your changes.
@@ -236,7 +236,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                       <Building2 className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-serif text-navy">Business Information</CardTitle>
+                      <CardTitle className="text-xl font-sans text-navy">Business Information</CardTitle>
                       <CardDescription className="mt-1">
                         Manage your business details, contact information, and opening hours.
                         This information appears in multiple places across your site.
@@ -261,7 +261,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                       <Sparkles className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-serif text-navy">Hero Section</CardTitle>
+                      <CardTitle className="text-xl font-sans text-navy">Hero Section</CardTitle>
                       <CardDescription className="mt-1">
                         Edit the main banner at the top of your homepage - the first thing
                         visitors see when they land on your site.
@@ -286,7 +286,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                       <Wine className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-serif text-navy">Wine Menu</CardTitle>
+                      <CardTitle className="text-xl font-sans text-navy">Wine Menu</CardTitle>
                       <CardDescription className="mt-1">
                         Update your wine list. Keep it fresh to encourage repeat visits!
                         Organize wines by glass and bottle, with categories for bottles.
@@ -311,7 +311,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                       <Calendar className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-serif text-navy">Events & Happenings</CardTitle>
+                      <CardTitle className="text-xl font-sans text-navy">Events & Happenings</CardTitle>
                       <CardDescription className="mt-1">
                         Promote your events, tastings, and special occasions. Mark recurring
                         events to show they happen regularly.
@@ -336,7 +336,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                       <HelpCircle className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-serif text-navy">Frequently Asked Questions</CardTitle>
+                      <CardTitle className="text-xl font-sans text-navy">Frequently Asked Questions</CardTitle>
                       <CardDescription className="mt-1">
                         Answer common questions to help visitors find information quickly.
                         This reduces the number of repeat questions you get.
