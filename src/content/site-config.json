@@ -81,10 +81,10 @@
     "events": [
       {
         "title": "Sunday Sessions",
-        "date": "Every Sunday",
+        "date": "Sunday 8th Feb",
         "time": "2:00 PM - 9:00 PM",
         "description": "Live acoustic sets from local musicians. No cover charge, just good tunes and great wine.",
-        "recurring": true
+        "recurring": false
       },
       {
         "title": "Winemaker Tastings",
