@@ -58,7 +58,7 @@ export function HeroForm({ initialData, onSave }: HeroFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Hero Section</CardTitle>
           <CardDescription>
@@ -96,7 +96,7 @@ export function HeroForm({ initialData, onSave }: HeroFormProps) {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Call-to-Action Buttons</CardTitle>
           <CardDescription>The main actions you want visitors to take</CardDescription>
@@ -165,7 +165,7 @@ export function HeroForm({ initialData, onSave }: HeroFormProps) {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Images</CardTitle>
           <CardDescription>

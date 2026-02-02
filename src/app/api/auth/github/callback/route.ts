@@ -47,7 +47,25 @@ export async function GET(request: NextRequest) {
     // Add success indicator
     redirectUrl.searchParams.set('auth_success', 'true');
 
-    return NextResponse.redirect(redirectUrl);
+    // Create response with redirect
+    const response = NextResponse.redirect(redirectUrl);
+
+    // Set session cookie
+    const sessionData = JSON.stringify({
+      user: result.user,
+      expiresAt: Date.now() + (7 * 24 * 60 * 60 * 1000), // 7 days
+    });
+    const sessionCookie = Buffer.from(sessionData).toString('base64');
+
+    response.cookies.set('admin_session', sessionCookie, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 7 * 24 * 60 * 60, // 7 days in seconds
+      path: '/',
+    });
+
+    return response;
   } catch (error) {
     console.error('GitHub OAuth callback error:', error);
 

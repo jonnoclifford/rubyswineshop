@@ -80,7 +80,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Business Information</CardTitle>
           <CardDescription>
@@ -112,7 +112,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Address</CardTitle>
           <CardDescription>Your business location details</CardDescription>
@@ -158,7 +158,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Contact Information</CardTitle>
           <CardDescription>How customers can reach you</CardDescription>
@@ -202,7 +202,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Opening Hours</CardTitle>
           <CardDescription>

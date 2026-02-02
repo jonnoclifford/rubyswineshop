@@ -88,7 +88,7 @@ export function EventForm({ initialData, onSave }: EventFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>What&apos;s On Section</CardTitle>
           <CardDescription>

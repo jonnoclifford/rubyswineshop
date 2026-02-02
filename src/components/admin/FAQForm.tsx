@@ -79,7 +79,7 @@ export function FAQForm({ initialData, onSave }: FAQFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>FAQ Section</CardTitle>
           <CardDescription>

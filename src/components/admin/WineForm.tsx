@@ -181,7 +181,7 @@ export function WineForm({ initialData, onSave }: WineFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>Menu Settings</CardTitle>
           <CardDescription>General menu configuration</CardDescription>
@@ -228,7 +228,7 @@ export function WineForm({ initialData, onSave }: WineFormProps) {
       </Card>
 
       {/* By the Glass Section */}
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>By the Glass</CardTitle>
           <CardDescription>Wines available by the glass</CardDescription>
@@ -325,7 +325,7 @@ export function WineForm({ initialData, onSave }: WineFormProps) {
       </Card>
 
       {/* By the Bottle Section */}
-      <Card>
+      <Card className="shadow-md border-gray-200">
         <CardHeader>
           <CardTitle>By the Bottle</CardTitle>
           <CardDescription>Wines available by the bottle, organized by category</CardDescription>
