@@ -10,19 +10,7 @@ import { FAQ } from '@/components/sections/FAQ';
 import { FindUs } from '@/components/sections/FindUs';
 import { getSiteConfig } from '@/lib/cms';
 
-/**
- * Home Page Component
- *
- * This is the main landing page for Ruby's Wine Bar.
- * It fetches content from the CMS at build time using Next.js 15 App Router
- * server-side rendering capabilities.
- *
- * The page uses static generation for optimal performance, with content
- * being managed through Decap CMS.
- */
 export default async function Home() {
-  // Fetch site configuration from CMS
-  // This happens at build time for static generation
   const siteConfig = await getSiteConfig();
 
   return (

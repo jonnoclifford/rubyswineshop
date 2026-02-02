@@ -16,9 +16,7 @@ export function Hero({ hero }: HeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <>
-      <section ref={parallaxRef} className="relative h-screen w-full overflow-hidden bg-cream">
-        {/* Content */}
+    <section ref={parallaxRef} className="relative h-screen w-full overflow-hidden bg-cream">
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
@@ -82,7 +80,6 @@ export function Hero({ hero }: HeroProps) {
             <ChevronDown className="w-8 h-8 text-terracotta" />
           </motion.button>
         </div>
-      </section>
-    </>
+    </section>
   );
 }

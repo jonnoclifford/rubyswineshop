@@ -1,10 +1,4 @@
-// Content type definitions for Ruby's Wine Bar
-// These match the structure in site-config.ts
-
-// Utility type for nullable values
 export type Maybe<T> = T | null | undefined;
-
-// Base content types
 export interface HeaderContent {
   logo: string;
   navigation: {
@@ -90,14 +84,6 @@ export interface MenuContent {
     categories: {
       name: string;
       items: WineItem[];
-    }[];
-  };
-  snacks: {
-    heading: string;
-    items: {
-      name: string;
-      description?: string;
-      price: string;
     }[];
   };
 }

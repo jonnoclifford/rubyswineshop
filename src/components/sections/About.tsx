@@ -10,12 +10,10 @@ interface AboutProps {
 }
 
 export function About({ about }: AboutProps) {
-
   return (
     <section id="about" className="py-section-lg bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-          {/* Image */}
           <AnimatedSection variants={slideInLeft} className="lg:col-span-2">
             <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0">
               <Image
@@ -30,7 +28,6 @@ export function About({ about }: AboutProps) {
             </div>
           </AnimatedSection>
 
-          {/* Content */}
           <AnimatedSection variants={slideInRight} className="lg:col-span-3">
             <div>
               <h2 className="font-serif text-display-md text-navy mb-6 tracking-normal">

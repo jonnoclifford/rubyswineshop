@@ -13,7 +13,6 @@ export function Footer({ business }: FooterProps) {
     <footer className="bg-terracotta text-cream py-12">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand with Logo */}
           <div className="flex flex-col items-center md:items-start">
             <Image
               src="/logo-full.png"
@@ -27,7 +26,6 @@ export function Footer({ business }: FooterProps) {
             </p>
           </div>
 
-          {/* Contact */}
           <div className="text-center md:text-left">
             <h4 className="font-serif text-heading-sm mb-3 text-cream">Get in Touch</h4>
             <div className="space-y-2 flex flex-col items-center md:items-start">
@@ -57,7 +55,6 @@ export function Footer({ business }: FooterProps) {
             </div>
           </div>
 
-          {/* Address */}
           <div className="text-center md:text-left">
             <h4 className="font-serif text-heading-sm mb-3 text-cream">Visit Us</h4>
             <address className="text-body-sm text-cream/90 not-italic">

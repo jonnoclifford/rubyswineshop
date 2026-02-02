@@ -173,31 +173,6 @@ const siteConfig: SiteConfig = {
         },
       ],
     },
-    snacks: {
-      heading: "Snacks",
-      items: [
-        {
-          name: "House Marinated Olives",
-          price: "$8",
-          description: "Local olives with citrus and herbs",
-        },
-        {
-          name: "Sourdough & Cultured Butter",
-          price: "$10",
-          description: "Fresh daily from The Bread Social",
-        },
-        {
-          name: "Charcuterie Board",
-          price: "$28",
-          description: "Rotating selection of cured meats and pickles",
-        },
-        {
-          name: "Cheese Board",
-          price: "$32",
-          description: "Three Australian cheeses with house-made quince paste",
-        },
-      ],
-    },
   },
 
   hungry: {
@@ -316,8 +291,5 @@ const siteConfig: SiteConfig = {
   },
 };
 
-// Export for existing components (backward compatibility)
 export { siteConfig };
-
-// Default export
 export default siteConfig;

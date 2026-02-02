@@ -11,7 +11,6 @@ interface MenuProps {
 }
 
 export function Menu({ menu }: MenuProps) {
-
   return (
     <section id="menu" className="py-section-lg bg-cream">
       <div className="container mx-auto px-6 lg:px-8">
@@ -20,8 +19,6 @@ export function Menu({ menu }: MenuProps) {
             {menu.heading}
           </h2>
         </AnimatedSection>
-
-        {/* By the Glass */}
         <div className="mb-16">
           <AnimatedSection>
             <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
@@ -44,7 +41,6 @@ export function Menu({ menu }: MenuProps) {
           </motion.div>
         </div>
 
-        {/* By the Bottle */}
         <div className="mb-16">
           <AnimatedSection>
             <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
