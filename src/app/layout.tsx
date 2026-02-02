@@ -77,8 +77,8 @@ export default async function RootLayout({
     image: siteConfig.seo.ogImage,
     '@id': process.env.NEXT_PUBLIC_SITE_URL || '',
     url: process.env.NEXT_PUBLIC_SITE_URL || '',
-    telephone: siteConfig.business.contact.phone,
-    email: siteConfig.business.contact.email,
+    ...(siteConfig.business.contact.phone && { telephone: siteConfig.business.contact.phone }),
+    ...(siteConfig.business.contact.email && { email: siteConfig.business.contact.email }),
     priceRange: '$$',
     servesCuisine: 'Wine Bar',
     acceptsReservations: false,
@@ -128,9 +128,11 @@ export default async function RootLayout({
         closes: '21:00',
       },
     ],
-    sameAs: [
-      `https://instagram.com/${siteConfig.business.contact.instagram.replace('@', '')}`,
-    ],
+    ...(siteConfig.business.contact.instagram && {
+      sameAs: [
+        `https://instagram.com/${siteConfig.business.contact.instagram.replace('@', '')}`,
+      ],
+    }),
   };
 
   return (
