@@ -81,10 +81,10 @@
     "events": [
       {
         "title": "Sunday Sessions",
-        "date": "Sunday 8th Feb",
+        "date": "Every Sunday",
         "time": "2:00 PM - 9:00 PM",
         "description": "Live acoustic sets from local musicians. No cover charge, just good tunes and great wine.",
-        "recurring": false
+        "recurring": true
       },
       {
         "title": "Winemaker Tastings",
@@ -288,5 +288,42 @@
     ],
     "hoursHeading": "When to Find Us",
     "ctaText": "Got it!"
+  },
+  "sectionSettings": {
+    "hero": {
+      "enabled": true,
+      "order": 0,
+      "colorScheme": "light"
+    },
+    "about": {
+      "enabled": true,
+      "order": 1,
+      "colorScheme": "light"
+    },
+    "menu": {
+      "enabled": true,
+      "order": 2,
+      "colorScheme": "cream"
+    },
+    "hungry": {
+      "enabled": true,
+      "order": 3,
+      "colorScheme": "light"
+    },
+    "whatsOn": {
+      "enabled": true,
+      "order": 4,
+      "colorScheme": "terracotta"
+    },
+    "faq": {
+      "enabled": true,
+      "order": 5,
+      "colorScheme": "light"
+    },
+    "findUs": {
+      "enabled": true,
+      "order": 6,
+      "colorScheme": "cream"
+    }
   }
 }
