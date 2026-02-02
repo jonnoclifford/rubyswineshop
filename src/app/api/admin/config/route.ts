@@ -9,6 +9,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/auth';
 import { readConfig, updateConfig, GitHubAPIError } from '@/lib/github-api';
 import type { SiteConfig } from '@/types/content';
+import { writeFileSync, readFileSync } from 'fs';
+import { join } from 'path';
 
 /**
  * GET /api/admin/config
@@ -26,7 +28,22 @@ export async function GET() {
       );
     }
 
-    const config = await readConfig();
+    // In development, read from local file for instant updates
+    let config: SiteConfig;
+    if (process.env.NODE_ENV === 'development') {
+      try {
+        const configPath = join(process.cwd(), 'src', 'content', 'site-config.json');
+        const fileContent = readFileSync(configPath, 'utf-8');
+        config = JSON.parse(fileContent) as SiteConfig;
+        console.log('📖 Reading from local config file (dev mode)');
+      } catch (localError) {
+        console.warn('⚠️ Failed to read local config, falling back to GitHub:', localError);
+        config = await readConfig();
+      }
+    } else {
+      config = await readConfig();
+    }
+
     return NextResponse.json(config);
   } catch (error) {
     console.error('Failed to fetch config:', error);
@@ -68,6 +85,18 @@ export async function POST(request: NextRequest) {
 
     // Update config on GitHub
     const result = await updateConfig(config, commitMessage);
+
+    // In development, also write to local file for immediate preview
+    if (process.env.NODE_ENV === 'development') {
+      try {
+        const configPath = join(process.cwd(), 'src', 'content', 'site-config.json');
+        writeFileSync(configPath, JSON.stringify(config, null, 2), 'utf-8');
+        console.log('✅ Local config file updated for dev preview');
+      } catch (localError) {
+        console.warn('⚠️ Failed to update local config file:', localError);
+        // Don't fail the request - GitHub update succeeded
+      }
+    }
 
     return NextResponse.json({
       success: true,
