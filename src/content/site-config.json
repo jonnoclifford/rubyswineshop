@@ -293,7 +293,7 @@
     "hero": {
       "enabled": true,
       "order": 0,
-      "colorScheme": "light"
+      "colorScheme": "dark"
     },
     "about": {
       "enabled": true,
@@ -303,7 +303,7 @@
     "menu": {
       "enabled": true,
       "order": 2,
-      "colorScheme": "cream"
+      "colorScheme": "terracotta"
     },
     "hungry": {
       "enabled": true,
