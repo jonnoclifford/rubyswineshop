@@ -80,54 +80,60 @@ export function FindUs({ findUs, business }: FindUsProps) {
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
-                      Phone
-                    </h4>
-                    <a
-                      href={`tel:${business.contact.phone}`}
-                      className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
-                    >
-                      {business.contact.phone}
-                    </a>
+                {business.contact.phone && (
+                  <div className="flex items-start gap-4">
+                    <Phone className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                        Phone
+                      </h4>
+                      <a
+                        href={`tel:${business.contact.phone}`}
+                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                      >
+                        {business.contact.phone}
+                      </a>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Email */}
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
-                      Email
-                    </h4>
-                    <a
-                      href={`mailto:${business.contact.email}`}
-                      className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
-                    >
-                      {business.contact.email}
-                    </a>
+                {business.contact.email && (
+                  <div className="flex items-start gap-4">
+                    <Mail className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                        Email
+                      </h4>
+                      <a
+                        href={`mailto:${business.contact.email}`}
+                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                      >
+                        {business.contact.email}
+                      </a>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Instagram */}
-                <div className="flex items-start gap-4">
-                  <Instagram className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
-                      Instagram
-                    </h4>
-                    <a
-                      href={`https://instagram.com/${business.contact.instagram.replace('@', '')}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
-                    >
-                      {business.contact.instagram}
-                    </a>
+                {business.contact.instagram && (
+                  <div className="flex items-start gap-4">
+                    <Instagram className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                        Instagram
+                      </h4>
+                      <a
+                        href={`https://instagram.com/${business.contact.instagram.replace('@', '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                      >
+                        {business.contact.instagram}
+                      </a>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Hours */}
                 <div className="pt-6 border-t border-navy/10">

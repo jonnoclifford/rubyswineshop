@@ -19,9 +19,9 @@ export interface BusinessInfo {
     country: string;
   };
   contact: {
-    phone: string;
-    email: string;
-    instagram: string;
+    phone?: string;
+    email?: string;
+    instagram?: string;
   };
   hours: {
     [key: string]: string;

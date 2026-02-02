@@ -73,25 +73,29 @@ export function VisitUsModal({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5 text-terracotta flex-shrink-0" />
-              <a
-                href={`tel:${business.contact.phone}`}
-                className="text-body-sm text-navy/80 hover:text-terracotta transition-colors"
-              >
-                {business.contact.phone}
-              </a>
-            </div>
+            {business.contact.phone && (
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-terracotta flex-shrink-0" />
+                <a
+                  href={`tel:${business.contact.phone}`}
+                  className="text-body-sm text-navy/80 hover:text-terracotta transition-colors"
+                >
+                  {business.contact.phone}
+                </a>
+              </div>
+            )}
 
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-terracotta flex-shrink-0" />
-              <a
-                href={`mailto:${business.contact.email}`}
-                className="text-body-sm text-navy/80 hover:text-terracotta transition-colors"
-              >
-                {business.contact.email}
-              </a>
-            </div>
+            {business.contact.email && (
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-terracotta flex-shrink-0" />
+                <a
+                  href={`mailto:${business.contact.email}`}
+                  className="text-body-sm text-navy/80 hover:text-terracotta transition-colors"
+                >
+                  {business.contact.email}
+                </a>
+              </div>
+            )}
           </div>
 
           <Button

@@ -27,13 +27,12 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
       newErrors.name = 'Business name is required';
     }
 
-    if (!formData.contact.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      newErrors.email = 'Valid email is required';
+    // Only validate email if provided
+    if (formData.contact.email && !formData.contact.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      newErrors.email = 'Please enter a valid email address';
     }
 
-    if (!formData.contact.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    }
+    // Phone is optional - no validation required
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -166,11 +165,11 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone">Phone Number</Label>
               <Input
                 id="phone"
                 type="tel"
-                value={formData.contact.phone}
+                value={formData.contact.phone || ''}
                 onChange={(e) => updateField('contact.phone', e.target.value)}
                 className={errors.phone ? 'border-red-500' : ''}
               />
@@ -178,11 +177,11 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email *</Label>
+              <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
                 type="email"
-                value={formData.contact.email}
+                value={formData.contact.email || ''}
                 onChange={(e) => updateField('contact.email', e.target.value)}
                 className={errors.email ? 'border-red-500' : ''}
               />
@@ -194,7 +193,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
               <Input
                 id="instagram"
                 placeholder="@yourbusiness"
-                value={formData.contact.instagram}
+                value={formData.contact.instagram || ''}
                 onChange={(e) => updateField('contact.instagram', e.target.value)}
               />
             </div>
