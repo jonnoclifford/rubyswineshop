@@ -293,7 +293,7 @@
     "hero": {
       "enabled": true,
       "order": 0,
-      "colorScheme": "dark"
+      "colorScheme": "light"
     },
     "about": {
       "enabled": true,
