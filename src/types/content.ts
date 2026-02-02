@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Content type definitions for Ruby's Wine Bar
 // These match the structure in site-config.ts
 
