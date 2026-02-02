@@ -10,9 +10,9 @@
       "country": "Australia"
     },
     "contact": {
-      "phone": "+61 7 1234 5678",
+      "phone": "12345678",
       "email": "hello@rubyswineshop.com.au",
-      "instagram": ""
+      "instagram": "@rubyswineshop"
     },
     "hours": {
       "Monday": "Closed",
