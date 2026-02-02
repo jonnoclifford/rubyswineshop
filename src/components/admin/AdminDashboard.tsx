@@ -133,7 +133,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                 <Wine className="h-7 w-7 text-cream" />
               </div>
               <div>
-                <h1 className="text-2xl font-sans font-bold text-cream">Ruby&apos;s Wine Bar Shop</h1>
+                <h1 className="text-2xl font-sans font-bold text-cream">Ruby&apos;s Wine Shop Admin</h1>
                 <p className="text-xs text-cream/70">
                   Content Management System - by Jaunt Studio
                 </p>
@@ -194,7 +194,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
               <div className="flex-1">
-                <CardTitle className="text-2xl font-sans text-navy mb-2">Welcome to Your Shop Panel</CardTitle>
+                <CardTitle className="text-2xl font-sans text-navy mb-2">Welcome to Your Admin Panel</CardTitle>
                 <CardDescription className="text-base">
                   Manage your website content here. Changes are saved automatically and deployed live within minutes.
                   Use the <strong>Preview</strong> button to see your changes.
@@ -387,7 +387,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
             <div className="flex items-center justify-center gap-2 mb-2">
               <Wine className="h-4 w-4 text-cream" />
               <p className="text-sm text-cream font-medium">
-                Ruby&apos;s Wine Bar Shop Panel
+                Ruby&apos;s Wine Shop Admin Panel
               </p>
             </div>
             <p className="text-xs text-cream/60">
