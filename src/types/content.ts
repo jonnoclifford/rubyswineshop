@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Import Tina types for CMS integration
 import type {
   SiteConfig as TinaSiteConfig,
