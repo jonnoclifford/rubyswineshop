@@ -47,7 +47,7 @@ export default function LoginForm({ error }: LoginFormProps) {
           </div>
           <h1 className="text-3xl font-bold text-white">Admin Access</h1>
           <p className="mt-2 text-zinc-400">
-            Ruby's Wine Bar Content Management
+            Ruby&apos;s Wine Bar Content Management
           </p>
         </div>
 

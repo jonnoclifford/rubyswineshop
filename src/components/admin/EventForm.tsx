@@ -90,7 +90,7 @@ export function EventForm({ initialData, onSave }: EventFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>What's On Section</CardTitle>
+          <CardTitle>What&apos;s On Section</CardTitle>
           <CardDescription>
             Manage your events and special happenings
           </CardDescription>

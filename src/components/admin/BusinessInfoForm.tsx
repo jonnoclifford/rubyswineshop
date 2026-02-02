@@ -55,10 +55,10 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
     setFormData(prev => {
       const newData = { ...prev };
       const keys = path.split('.');
-      let current: any = newData;
+      let current: Record<string, unknown> = newData as unknown as Record<string, unknown>;
 
       for (let i = 0; i < keys.length - 1; i++) {
-        current = current[keys[i]];
+        current = current[keys[i]] as Record<string, unknown>;
       }
 
       current[keys[keys.length - 1]] = value;
@@ -206,7 +206,7 @@ export function BusinessInfoForm({ initialData, onSave }: BusinessInfoFormProps)
         <CardHeader>
           <CardTitle>Opening Hours</CardTitle>
           <CardDescription>
-            Set your business hours for each day. Use "Closed" for days you're not open.
+            Set your business hours for each day. Use &quot;Closed&quot; for days you&apos;re not open.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">

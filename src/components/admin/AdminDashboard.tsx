@@ -47,7 +47,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
     }
   };
 
-  const handleSectionSave = async (section: keyof SiteConfig, data: any) => {
+  const handleSectionSave = async <K extends keyof SiteConfig>(section: K, data: SiteConfig[K]) => {
     if (!siteConfig) return;
 
     const updatedConfig = {
@@ -124,7 +124,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div>
-              <h1 className="text-2xl font-serif font-bold text-navy">Ruby's Admin</h1>
+              <h1 className="text-2xl font-serif font-bold text-navy">Ruby&apos;s Admin</h1>
               <p className="text-sm text-gray-500">
                 Content Management System
               </p>
@@ -179,7 +179,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
             <CardTitle>Welcome to the Admin Panel</CardTitle>
             <CardDescription>
               Manage your website content here. Changes are saved automatically when you
-              submit each form. Use the "Preview Site" button to see your changes live.
+              submit each form. Use the &quot;Preview Site&quot; button to see your changes live.
             </CardDescription>
           </CardHeader>
         </Card>
@@ -290,7 +290,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-center text-sm text-gray-500">
             <p>
-              Ruby's Wine Bar Admin Panel &middot; Need help? Contact your developer
+              Ruby&apos;s Wine Bar Admin Panel &middot; Need help? Contact your developer
             </p>
           </div>
         </div>
