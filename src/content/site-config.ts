@@ -319,5 +319,5 @@ const siteConfig: SiteConfig = {
 // Export for existing components (backward compatibility)
 export { siteConfig };
 
-// Default export for Tina CMS
+// Default export
 export default siteConfig;

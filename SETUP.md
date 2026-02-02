@@ -28,6 +28,8 @@ When running the development server:
 http://localhost:3000/admin
 ```
 
+Note: Due to Next.js routing, you may need to access `/admin/index.html` directly in development. In production, the redirect in `next.config.mjs` will handle `/admin` automatically.
+
 ---
 
 ## GitHub OAuth Setup

@@ -179,11 +179,11 @@ export interface SiteConfig {
   seo: SEOContent;
 }
 
-// Tina CMS utility types
-// These help transform Tina's GraphQL responses to our application types
+// CMS utility types
+// These help transform CMS responses to our application types
 
 /**
- * Utility type to unwrap Tina's Maybe wrapper
+ * Utility type to unwrap Maybe wrapper
  */
 export type Unwrap<T> = T extends Maybe<infer U> ? U : T;
 
