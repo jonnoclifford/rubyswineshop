@@ -8,7 +8,7 @@ export async function getSiteConfig(): Promise<SiteConfig> {
     try {
       const response = await fetch(
         `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/${process.env.GITHUB_BRANCH}/src/content/site-config.json`,
-        { next: { revalidate: 60 } } // Cache for 60 seconds
+        { next: { revalidate: 10 } } // Cache for 10 seconds
       );
 
       if (response.ok) {

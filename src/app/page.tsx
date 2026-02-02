@@ -10,8 +10,8 @@ import { FAQ } from '@/components/sections/FAQ';
 import { FindUs } from '@/components/sections/FindUs';
 import { getSiteConfig } from '@/lib/cms';
 
-// Revalidate every 60 seconds - picks up content changes from admin
-export const revalidate = 60;
+// Revalidate every 10 seconds - picks up content changes from admin quickly
+export const revalidate = 10;
 
 export default async function Home() {
   const siteConfig = await getSiteConfig();

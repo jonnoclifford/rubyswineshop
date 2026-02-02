@@ -30,9 +30,17 @@ export async function GET() {
     // Fetch images from GitHub
     const images = await listImages();
 
+    // In production, use GitHub raw URLs since images might not be deployed yet
+    const imagesWithUrls = images.map(img => ({
+      ...img,
+      path: process.env.NODE_ENV === 'production'
+        ? `https://raw.githubusercontent.com/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/${process.env.GITHUB_BRANCH}/public${img.path}`
+        : img.path
+    }));
+
     return NextResponse.json({
       success: true,
-      images,
+      images: imagesWithUrls,
     });
   } catch (error) {
     console.error('Failed to list images:', error);
