@@ -10,14 +10,14 @@ const branch =
 export default defineConfig({
   branch,
 
-  // Get this from tina.io
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  // Get this from tina.io
-  token: process.env.TINA_TOKEN,
+  // Self-hosted mode - no TinaCloud required
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "self-hosted",
+  token: process.env.TINA_TOKEN || "self-hosted",
 
   build: {
     outputFolder: "admin",
     publicFolder: "public",
+    skipSDKGeneration: true, // Skip cloud-dependent SDK generation
   },
   media: {
     tina: {
