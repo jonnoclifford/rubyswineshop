@@ -303,7 +303,7 @@
     "menu": {
       "enabled": true,
       "order": 2,
-      "colorScheme": "light"
+      "colorScheme": "dark"
     },
     "hungry": {
       "enabled": true,
