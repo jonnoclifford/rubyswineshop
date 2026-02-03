@@ -43,16 +43,18 @@ export function LivePreviewPanel({
   const [isOpen, setIsOpen] = useState(false);
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [iframeKey, setIframeKey] = useState(0);
-  const [fullPreviewUrl, setFullPreviewUrl] = useState(previewUrl);
+  const [fullPreviewUrl, setFullPreviewUrl] = useState('');
 
-  // Construct full URL from relative URL on mount
+  // Construct full URL from relative URL - runs when modal opens
   useEffect(() => {
-    if (previewUrl.startsWith('/')) {
-      setFullPreviewUrl(`${window.location.origin}${previewUrl}`);
-    } else {
-      setFullPreviewUrl(previewUrl);
+    if (isOpen && typeof window !== 'undefined') {
+      if (previewUrl.startsWith('/')) {
+        setFullPreviewUrl(`${window.location.origin}${previewUrl}`);
+      } else {
+        setFullPreviewUrl(previewUrl);
+      }
     }
-  }, [previewUrl]);
+  }, [isOpen, previewUrl]);
 
   // Refresh iframe when opened
   useEffect(() => {
@@ -114,12 +116,18 @@ export function LivePreviewPanel({
           {/* Preview Area */}
           <div className="flex-1 bg-gray-100 p-4 overflow-auto">
             <div className={`mx-auto bg-white shadow-lg transition-all ${VIEWPORT_SIZES[viewport]}`}>
-              <iframe
-                key={iframeKey}
-                src={fullPreviewUrl}
-                className="w-full h-full border-0"
-                title="Live Preview"
-              />
+              {fullPreviewUrl ? (
+                <iframe
+                  key={iframeKey}
+                  src={fullPreviewUrl}
+                  className="w-full h-full border-0"
+                  title="Live Preview"
+                />
+              ) : (
+                <div className="flex items-center justify-center h-full text-gray-500">
+                  Loading preview...
+                </div>
+              )}
             </div>
           </div>
         </DialogContent>
