@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { RichTextEditor } from '@/components/admin/RichTextEditor';
+import { LivePreviewPanel } from '@/components/admin/LivePreviewPanel';
 import type { HungryContent } from '@/types/content';
 import { Save, Plus, Trash2 } from 'lucide-react';
 
@@ -178,8 +179,9 @@ export function FoodForm({ initialData, onSave }: FoodFormProps) {
         </CardContent>
       </Card>
 
-      {/* Save Button */}
-      <div className="flex justify-end">
+      {/* Action Buttons */}
+      <div className="flex justify-between items-center">
+        <LivePreviewPanel previewUrl="/#menu" buttonText="Preview Food Section" />
         <Button
           type="submit"
           disabled={isSaving}

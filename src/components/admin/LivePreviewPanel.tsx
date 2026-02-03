@@ -43,6 +43,16 @@ export function LivePreviewPanel({
   const [isOpen, setIsOpen] = useState(false);
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [iframeKey, setIframeKey] = useState(0);
+  const [fullPreviewUrl, setFullPreviewUrl] = useState(previewUrl);
+
+  // Construct full URL from relative URL on mount
+  useEffect(() => {
+    if (previewUrl.startsWith('/')) {
+      setFullPreviewUrl(`${window.location.origin}${previewUrl}`);
+    } else {
+      setFullPreviewUrl(previewUrl);
+    }
+  }, [previewUrl]);
 
   // Refresh iframe when opened
   useEffect(() => {
@@ -106,7 +116,7 @@ export function LivePreviewPanel({
             <div className={`mx-auto bg-white shadow-lg transition-all ${VIEWPORT_SIZES[viewport]}`}>
               <iframe
                 key={iframeKey}
-                src={previewUrl}
+                src={fullPreviewUrl}
                 className="w-full h-full border-0"
                 title="Live Preview"
               />

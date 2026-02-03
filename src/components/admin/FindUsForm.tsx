@@ -11,6 +11,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
+import { LivePreviewPanel } from '@/components/admin/LivePreviewPanel';
 import type { FindUsContent } from '@/types/content';
 import { Save } from 'lucide-react';
 
@@ -127,8 +128,9 @@ export function FindUsForm({ initialData, onSave }: FindUsFormProps) {
         </CardHeader>
       </Card>
 
-      {/* Save Button */}
-      <div className="flex justify-end">
+      {/* Action Buttons */}
+      <div className="flex justify-between items-center">
+        <LivePreviewPanel previewUrl="/#find-us" buttonText="Preview Location Section" />
         <Button
           type="submit"
           disabled={isSaving}

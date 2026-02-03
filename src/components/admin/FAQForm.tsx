@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { LivePreviewPanel } from '@/components/admin/LivePreviewPanel';
 import { FAQContent, FAQItem } from '@/types/content';
 import { Plus, Trash2 } from 'lucide-react';
 
@@ -165,7 +166,8 @@ export function FAQForm({ initialData, onSave }: FAQFormProps) {
         Add FAQ
       </Button>
 
-      <div className="flex justify-end gap-3">
+      <div className="flex justify-between items-center gap-3">
+        <LivePreviewPanel previewUrl="/#faq" buttonText="Preview FAQ Section" />
         <Button type="submit" disabled={isSaving} className="min-w-[120px]">
           {isSaving ? 'Saving...' : 'Save Changes'}
         </Button>
