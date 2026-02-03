@@ -312,17 +312,17 @@
     },
     "whatsOn": {
       "enabled": true,
-      "order": 4,
+      "order": 6,
       "colorScheme": "terracotta"
     },
     "faq": {
       "enabled": true,
-      "order": 5,
+      "order": 4,
       "colorScheme": "light"
     },
     "findUs": {
       "enabled": true,
-      "order": 6,
+      "order": 5,
       "colorScheme": "cream"
     }
   }
