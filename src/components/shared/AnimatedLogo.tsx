@@ -17,10 +17,10 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
   }, []);
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto h-[420px] xl:h-[650px] -mt-12 xl:mt-0">
+    <div className="relative w-full max-w-2xl mx-auto h-[420px] md:h-[380px] lg:h-[420px] xl:h-[650px] -mt-12 xl:mt-0">
       {/* Type/Text - positioned close to glasses, mobile adjustments */}
       <div
-        className={`absolute left-0 right-0 -top-3 xl:top-[78px] transition-all ease-out ${
+        className={`absolute left-0 right-0 -top-3 md:top-0 lg:top-2 xl:top-[78px] transition-all ease-out ${
           startAnimation
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-16'
@@ -30,7 +30,7 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
           transitionDuration: '1150ms',
         }}
       >
-        <div className="w-4/5 mx-auto">
+        <div className="w-4/5 md:w-3/5 lg:w-3/5 xl:w-4/5 mx-auto">
           <Image
             src="/images/logo-type.png"
             alt="Ruby's Wine Shop"
@@ -42,11 +42,11 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
         </div>
       </div>
 
-      {/* Container for glasses - mobile: tighter spacing, desktop: perfected spacing */}
-      <div className="absolute left-0 right-0 bottom-[120px] xl:bottom-[110px] h-[280px] xl:h-[500px]">
-        {/* Left Glass */}
+      {/* Container for glasses - mobile: tighter spacing, tablet: scaled down, desktop: perfected spacing */}
+      <div className="absolute left-0 right-0 bottom-[120px] md:bottom-[100px] lg:bottom-[110px] xl:bottom-[110px] h-[280px] md:h-[220px] lg:h-[260px] xl:h-[500px]">
+        {/* Left Glass - Mobile & Tablet */}
         <div
-          className={`absolute bottom-[21px] xl:bottom-[-12px] transition-all ease-out ${
+          className={`absolute bottom-[21px] md:bottom-[12px] lg:bottom-[15px] xl:bottom-[-12px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 -translate-x-64'
@@ -93,9 +93,9 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
           />
         </div>
 
-        {/* Right Glass - Mobile */}
+        {/* Right Glass - Mobile & Tablet */}
         <div
-          className={`absolute bottom-[20px] xl:bottom-[-14px] transition-all ease-out ${
+          className={`absolute bottom-[20px] md:bottom-[11px] lg:bottom-[14px] xl:bottom-[-14px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
             startAnimation
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-64'
