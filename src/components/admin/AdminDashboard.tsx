@@ -26,7 +26,7 @@ import { VersionHistory } from '@/components/admin/VersionHistory';
 import { ThemeSelector, getStoredTheme } from '@/components/admin/ThemeSelector';
 import { SiteConfig } from '@/types/content';
 import type { CustomForm } from '@/types/form-builder';
-import { Eye, RefreshCw, LogOut, Building2, Sparkles, Wine, Calendar, HelpCircle, ImageIcon, LayoutDashboard, UtensilsCrossed, User, MapPin, Search, Menu as MenuIcon, FormInput } from 'lucide-react';
+import { Eye, RefreshCw, LogOut, Building2, Sparkles, Wine, Calendar, HelpCircle, ImageIcon, LayoutDashboard, UtensilsCrossed, User, MapPin, Search, Menu as MenuIcon, FormInput, Loader2 } from 'lucide-react';
 import type { GitHubUser } from '@/lib/auth';
 import { EnhancedImageManager } from '@/components/admin/EnhancedImageManager';
 import { ensureConfigVersion } from '@/lib/migrate-config';
@@ -112,10 +112,7 @@ export default function AdminDashboard({ user }: AdminDashboardProps) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-cream via-white to-cream flex items-center justify-center">
         <div className="text-center">
-          <div className="relative">
-            <Wine className="h-16 w-16 mx-auto mb-4 text-terracotta/20" />
-            <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-terracotta absolute top-4 left-1/2 -translate-x-1/2" />
-          </div>
+          <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-terracotta" />
           <p className="text-lg font-medium text-gray-700">Loading your admin panel...</p>
           <p className="text-sm text-gray-500 mt-2">Please wait a moment</p>
         </div>
