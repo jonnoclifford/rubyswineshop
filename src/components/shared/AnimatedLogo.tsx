@@ -43,12 +43,12 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
       </div>
 
       {/* Container for glasses - mobile: tighter spacing, tablet: scaled down, desktop: perfected spacing */}
-      <div className="absolute left-0 right-0 bottom-[120px] md:bottom-[100px] lg:bottom-[110px] xl:bottom-[110px] h-[280px] md:h-[220px] lg:h-[260px] xl:h-[500px]">
+      <div className="absolute left-0 right-0 bottom-[120px] md:-bottom-[70px] lg:-bottom-[50px] xl:bottom-[110px] h-[280px] md:h-[220px] lg:h-[260px] xl:h-[500px]">
         {/* Left Glass - Mobile & Tablet */}
         <div
-          className={`absolute bottom-[21px] md:bottom-[12px] lg:bottom-[15px] xl:bottom-[-12px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
+          className={`absolute bottom-[21px] md:bottom-[19px] lg:bottom-[22px] xl:bottom-[-12px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
             startAnimation
-              ? 'opacity-100 translate-x-0'
+              ? 'opacity-100 translate-x-0 md:translate-x-3'
               : 'opacity-0 -translate-x-64'
           }`}
           style={{
@@ -95,9 +95,9 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
 
         {/* Right Glass - Mobile & Tablet */}
         <div
-          className={`absolute bottom-[20px] md:bottom-[11px] lg:bottom-[14px] xl:bottom-[-14px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
+          className={`absolute bottom-[20px] md:bottom-[16px] lg:bottom-[19px] xl:bottom-[-14px] transition-all ease-out md:scale-75 lg:scale-85 xl:scale-100 ${
             startAnimation
-              ? 'opacity-100 translate-x-0'
+              ? 'opacity-100 translate-x-0 md:-translate-x-[13px]'
               : 'opacity-0 translate-x-64'
           }`}
           style={{
@@ -146,13 +146,12 @@ export function AnimatedLogo({ showHeading = false }: AnimatedLogoProps) {
       {/* Heading - appears on mobile under the glasses */}
       {showHeading && (
         <div
-          className={`absolute left-0 right-0 transition-all ease-out ${
+          className={`absolute left-0 right-0 -bottom-20 md:-bottom-32 lg:-bottom-28 transition-all ease-out ${
             startAnimation
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
           }`}
           style={{
-            bottom: '-80px',
             transitionDelay: '1200ms',
             transitionDuration: '1150ms',
           }}
