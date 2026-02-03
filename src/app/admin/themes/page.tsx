@@ -295,7 +295,7 @@ export default function ThemePreviewPage() {
                 </p>
 
                 <div className="bg-white rounded-lg p-4 mb-4">
-                  <h4 className="font-semibold text-indigo-900 mb-2">What's Different:</h4>
+                  <h4 className="font-semibold text-indigo-900 mb-2">What&apos;s Different:</h4>
                   <ul className="grid grid-cols-2 gap-2 text-sm text-indigo-700">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full" />
@@ -329,7 +329,7 @@ export default function ThemePreviewPage() {
                   <ol className="list-decimal list-inside space-y-1 text-indigo-800">
                     <li>Pick your favorite theme(s) from above</li>
                     <li>Let me know which one you prefer</li>
-                    <li>I'll integrate a theme switcher into your admin panel</li>
+                    <li>I&apos;ll integrate a theme switcher into your admin panel</li>
                     <li>Or set one as the permanent default</li>
                   </ol>
                 </div>

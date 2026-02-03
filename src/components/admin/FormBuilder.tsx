@@ -352,7 +352,7 @@ export function FormBuilder({ initialForms, onSave }: FormBuilderProps) {
 
               {activeForm.fields.length === 0 ? (
                 <div className="text-center py-8 text-muted-foreground border-2 border-dashed rounded-lg">
-                  <p>No fields yet. Click "Add Field" to get started.</p>
+                  <p>No fields yet. Click &quot;Add Field&quot; to get started.</p>
                 </div>
               ) : (
                 <DndContext

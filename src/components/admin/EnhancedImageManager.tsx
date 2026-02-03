@@ -20,9 +20,8 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import imageCompression from 'browser-image-compression';
 import type { ImageMetadata } from '@/types/content';
 
-interface ImageFile extends ImageMetadata {
-  // Extends ImageMetadata with any additional runtime properties
-}
+// ImageFile is an alias for ImageMetadata with potential for future extension
+type ImageFile = ImageMetadata;
 
 interface UploadProgress {
   filename: string;

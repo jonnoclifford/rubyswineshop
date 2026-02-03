@@ -224,7 +224,7 @@ export function NavigationForm({ initialData, onSave }: NavigationFormProps) {
         <CardContent>
           {formData.navigation.length === 0 ? (
             <div className="text-center py-8 text-muted-foreground">
-              <p>No navigation links yet. Click "Add Link" to get started.</p>
+              <p>No navigation links yet. Click &quot;Add Link&quot; to get started.</p>
             </div>
           ) : (
             <DndContext

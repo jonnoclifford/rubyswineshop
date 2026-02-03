@@ -188,7 +188,7 @@ export function SEOForm({ initialData, onSave }: SEOFormProps) {
             <li>Write a compelling meta description (120-160 characters) that encourages clicks</li>
             <li>Use specific, relevant keywords that your customers might search for</li>
             <li>Update your Open Graph image to show an appealing preview when shared on social media</li>
-            <li>Include your location (e.g., "Perth", "Western Australia") if targeting local customers</li>
+            <li>Include your location (e.g., &quot;Perth&quot;, &quot;Western Australia&quot;) if targeting local customers</li>
           </ul>
         </CardContent>
       </Card>
