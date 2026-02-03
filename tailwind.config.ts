@@ -7,6 +7,36 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    // Color scheme backgrounds
+    'bg-navy',
+    'bg-cream',
+    'bg-terracotta',
+    // Color scheme text - all variants for proper contrast
+    'text-navy',
+    'text-navy/80',
+    'text-navy/70',
+    'text-navy/60',
+    'text-cream',
+    'text-cream/90',
+    'text-cream/95',
+    'text-terracotta',
+    // Color scheme borders
+    'border-navy/5',
+    'border-navy/10',
+    'border-navy/20',
+    'border-cream/10',
+    'border-cream/20',
+    'border-terracotta/20',
+    // Color scheme backgrounds for cards
+    'bg-navy/70',
+    'bg-cream/95',
+    'bg-white',
+    'bg-terracotta/10',
+    'bg-navy/10',
+    'bg-navy/20',
+    'bg-cream/20',
+  ],
   theme: {
   	extend: {
   		colors: {

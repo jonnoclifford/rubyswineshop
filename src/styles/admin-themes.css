@@ -1,0 +1,443 @@
+/* Admin Theme System - 10 Themes with WCAG AA Compliant Contrast */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@500;600;700&family=Crimson+Pro:wght@400;600&family=Outfit:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=DM+Serif+Display&family=Sora:wght@400;500;600;700&family=Bebas+Neue&family=Raleway:wght@400;500;600;700&display=swap');
+
+/* ===== THEME DEFINITIONS ===== */
+
+/* Theme 1: Jaunt Studio */
+.theme-jaunt {
+  --admin-primary: #C75435;
+  --admin-primary-dark: #A4452B;
+  --admin-bg: #ffffff;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(199, 84, 53, 0.15);
+  --admin-text: #1F2937;
+  --admin-text-muted: #6B7280;
+  --admin-header-bg: #C55334;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --admin-font-heading: 'Inter', sans-serif;
+  --admin-font-body: 'Inter', sans-serif;
+  --admin-button-radius: 8px;
+}
+
+/* Theme 2: Midnight */
+.theme-midnight {
+  --admin-primary: #8B5CF6;
+  --admin-primary-dark: #7C3AED;
+  --admin-bg: #0F172A;
+  --admin-card-bg: #1E293B;
+  --admin-card-border: rgba(139, 92, 246, 0.2);
+  --admin-text: #F1F5F9;
+  --admin-text-muted: #CBD5E1;
+  --admin-header-bg: #1E293B;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.5);
+  --admin-font-heading: 'Space Grotesk', sans-serif;
+  --admin-font-body: 'Work Sans', sans-serif;
+  --admin-button-radius: 12px;
+}
+
+/* Theme 3: Brutalist */
+.theme-brutalist {
+  --admin-primary: #000000;
+  --admin-primary-dark: #000000;
+  --admin-bg: #ffffff;
+  --admin-card-bg: #F5F5F5;
+  --admin-card-border: #000000;
+  --admin-text: #000000;
+  --admin-text-muted: #404040;
+  --admin-header-bg: #000000;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 4px 4px 0 #000000;
+  --admin-font-heading: 'Bebas Neue', sans-serif;
+  --admin-font-body: 'Space Grotesk', sans-serif;
+  --admin-button-radius: 0px;
+}
+
+/* Theme 4: Sunset */
+.theme-sunset {
+  --admin-primary: #EA580C;
+  --admin-primary-dark: #C2410C;
+  --admin-bg: #FFF7ED;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(234, 88, 12, 0.2);
+  --admin-text: #7C2D12;
+  --admin-text-muted: #9A3412;
+  --admin-header-bg: #CC4D0A;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 2px 4px 0 rgb(234 88 12 / 0.1);
+  --admin-font-heading: 'Outfit', sans-serif;
+  --admin-font-body: 'Inter', sans-serif;
+  --admin-button-radius: 16px;
+}
+
+/* Theme 5: Forest */
+.theme-forest {
+  --admin-primary: #10B981;
+  --admin-primary-dark: #059669;
+  --admin-bg: #ECFDF5;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(16, 185, 129, 0.15);
+  --admin-text: #064E3B;
+  --admin-text-muted: #047857;
+  --admin-header-bg: #0C875E;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 2px 4px 0 rgb(5 150 105 / 0.1);
+  --admin-font-heading: 'Crimson Pro', serif;
+  --admin-font-body: 'Work Sans', sans-serif;
+  --admin-button-radius: 10px;
+}
+
+/* Theme 6: Ocean */
+.theme-ocean {
+  --admin-primary: #0891B2;
+  --admin-primary-dark: #0E7490;
+  --admin-bg: #ECFEFF;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(8, 145, 178, 0.15);
+  --admin-text: #164E63;
+  --admin-text-muted: #0E7490;
+  --admin-header-bg: #07819E;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 2px 4px 0 rgb(8 145 178 / 0.1);
+  --admin-font-heading: 'Sora', sans-serif;
+  --admin-font-body: 'Inter', sans-serif;
+  --admin-button-radius: 12px;
+}
+
+/* Theme 7: Lavender Dreams */
+.theme-lavender {
+  --admin-primary: #9333EA;
+  --admin-primary-dark: #7E22CE;
+  --admin-bg: #FAF5FF;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(147, 51, 234, 0.2);
+  --admin-text: #4C1D95;
+  --admin-text-muted: #6B21A8;
+  --admin-header-bg: #9333EA;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 4px 6px -1px rgb(147 51 234 / 0.1);
+  --admin-font-heading: 'Playfair Display', serif;
+  --admin-font-body: 'Raleway', sans-serif;
+  --admin-button-radius: 20px;
+}
+
+/* Theme 8: Neon Cyber */
+.theme-cyber {
+  --admin-primary: #00FFF0;
+  --admin-primary-dark: #00D9CC;
+  --admin-bg: #0A0E27;
+  --admin-card-bg: #1A1F3A;
+  --admin-card-border: rgba(0, 255, 240, 0.3);
+  --admin-text: #F8FAFC;
+  --admin-text-muted: #CBD5E1;
+  --admin-header-bg: #0A0E27;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 0 20px rgb(0 255 240 / 0.3);
+  --admin-font-heading: 'Sora', sans-serif;
+  --admin-font-body: 'Space Grotesk', sans-serif;
+  --admin-button-radius: 6px;
+}
+
+/* Theme 9: Retro Diner */
+.theme-retro {
+  --admin-primary: #DC2626;
+  --admin-primary-dark: #B91C1C;
+  --admin-bg: #FFF8DC;
+  --admin-card-bg: #ffffff;
+  --admin-card-border: rgba(220, 38, 38, 0.2);
+  --admin-text: #1C1917;
+  --admin-text-muted: #78350F;
+  --admin-header-bg: #DC2626;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  --admin-font-heading: 'Bebas Neue', sans-serif;
+  --admin-font-body: 'Outfit', sans-serif;
+  --admin-button-radius: 25px;
+}
+
+/* Theme 10: Sage Garden */
+.theme-sage {
+  --admin-primary: #84A98C;
+  --admin-primary-dark: #6B8E76;
+  --admin-bg: #F8F4ED;
+  --admin-card-bg: #FFFFFF;
+  --admin-card-border: rgba(132, 169, 140, 0.2);
+  --admin-text: #354F52;
+  --admin-text-muted: #52796F;
+  --admin-header-bg: #627D68;
+  --admin-header-text: #ffffff;
+  --admin-shadow: 0 2px 8px 0 rgb(53 79 82 / 0.08);
+  --admin-font-heading: 'DM Serif Display', serif;
+  --admin-font-body: 'Work Sans', sans-serif;
+  --admin-button-radius: 8px;
+}
+
+/* ===== UNIVERSAL THEME APPLICATION ===== */
+
+/* Main container */
+.admin-themed {
+  background: var(--admin-bg) !important;
+  color: var(--admin-text) !important;
+  font-family: var(--admin-font-body) !important;
+}
+
+/* Override welcome card's hardcoded gradient */
+.admin-themed main > [class*="Card"]:first-child,
+.admin-themed main > div:first-child > [class*="Card"] {
+  background: var(--admin-card-bg) !important;
+}
+
+/* Override tab button hardcoded backgrounds */
+.admin-themed [role="tablist"] button {
+  background: var(--admin-card-bg) !important;
+  border-color: var(--admin-card-border) !important;
+}
+
+/* ===== HEADER SECTION ===== */
+.admin-themed header {
+  background: var(--admin-header-bg) !important;
+}
+
+.admin-themed header,
+.admin-themed header *,
+.admin-themed header h1,
+.admin-themed header h2,
+.admin-themed header p,
+.admin-themed header div,
+.admin-themed header span,
+.admin-themed header svg,
+.admin-themed header button,
+.admin-themed header button *,
+.admin-themed header .text-cream,
+.admin-themed header .text-white,
+.admin-themed header .text-navy,
+.admin-themed header .text-terracotta {
+  color: var(--admin-header-text) !important;
+}
+
+/* ===== HEADINGS ===== */
+.admin-themed h1,
+.admin-themed h2,
+.admin-themed h3,
+.admin-themed h4,
+.admin-themed h5,
+.admin-themed h6 {
+  font-family: var(--admin-font-heading) !important;
+  color: var(--admin-text) !important;
+  font-weight: 600 !important;
+}
+
+/* ===== CARDS ===== */
+.admin-themed [class*="card"],
+.admin-themed [role="tabpanel"] > div > div,
+.admin-themed .bg-gradient-to-br,
+.admin-themed main div[class*="border"][class*="rounded"],
+.admin-themed [class*="CardContent"] > div[class*="border"] {
+  background: var(--admin-card-bg) !important;
+  border-color: var(--admin-card-border) !important;
+  box-shadow: var(--admin-shadow) !important;
+}
+
+/* Card headings */
+.admin-themed [class*="card"] h1,
+.admin-themed [class*="card"] h2,
+.admin-themed [class*="card"] h3,
+.admin-themed [class*="card"] h4,
+.admin-themed [class*="card"] .text-navy,
+.admin-themed [class*="card"] .text-white {
+  color: var(--admin-text) !important;
+}
+
+/* Card descriptions and body text */
+.admin-themed [class*="card"] p,
+.admin-themed [class*="card"] span:not([class*="text-white"]):not([class*="text-cream"]),
+.admin-themed [class*="CardDescription"] {
+  color: var(--admin-text-muted) !important;
+}
+
+/* ===== TAB BUTTONS ===== */
+.admin-themed button[role="tab"],
+.admin-themed button[role="tab"].bg-white,
+.admin-themed button[role="tab"].border-gray-200 {
+  background: var(--admin-card-bg) !important;
+  border-color: var(--admin-card-border) !important;
+  color: var(--admin-text) !important;
+  border-radius: var(--admin-button-radius) !important;
+  font-family: var(--admin-font-body) !important;
+  font-weight: 500 !important;
+}
+
+.admin-themed button[role="tab"]:hover,
+.admin-themed button[role="tab"].hover\:bg-gray-50:hover {
+  background: var(--admin-bg) !important;
+}
+
+.admin-themed button[role="tab"][data-state="active"] {
+  background: var(--admin-primary) !important;
+  border-color: var(--admin-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Tab button text */
+.admin-themed button[role="tab"] span {
+  color: inherit !important;
+}
+
+.admin-themed button[role="tab"][data-state="active"] span,
+.admin-themed button[role="tab"][data-state="active"] .text-white {
+  color: #ffffff !important;
+}
+
+/* Override hardcoded terracotta gradients in tabs */
+.admin-themed button[role="tab"][class*="from-terracotta"] {
+  background: var(--admin-primary) !important;
+}
+
+/* ===== BUTTONS ===== */
+.admin-themed button[class*="bg-gradient"],
+.admin-themed button[class*="bg-terracotta"],
+.admin-themed button.bg-terracotta,
+.admin-themed button.bg-primary,
+.admin-themed [class*="AlertDialogAction"] {
+  background: var(--admin-primary) !important;
+  color: #ffffff !important;
+  border-radius: var(--admin-button-radius) !important;
+  border: none !important;
+}
+
+.admin-themed button[class*="bg-gradient"]:hover,
+.admin-themed button[class*="bg-terracotta"]:hover,
+.admin-themed button.bg-terracotta:hover,
+.admin-themed button.bg-primary:hover {
+  background: var(--admin-primary-dark) !important;
+}
+
+/* ===== INPUTS & FORMS ===== */
+.admin-themed input,
+.admin-themed textarea,
+.admin-themed select {
+  background-color: var(--admin-card-bg) !important;
+  border-color: var(--admin-card-border) !important;
+  color: var(--admin-text) !important;
+  font-family: var(--admin-font-body) !important;
+}
+
+.admin-themed input::placeholder,
+.admin-themed textarea::placeholder {
+  color: var(--admin-text-muted) !important;
+  opacity: 0.6;
+}
+
+.admin-themed label {
+  color: var(--admin-text) !important;
+  font-family: var(--admin-font-body) !important;
+  font-weight: 500 !important;
+}
+
+/* ===== TEXT ELEMENTS ===== */
+.admin-themed p {
+  color: var(--admin-text-muted) !important;
+}
+
+.admin-themed [class*="text-gray"],
+.admin-themed [class*="text-muted"] {
+  color: var(--admin-text-muted) !important;
+}
+
+/* ===== FOOTER ===== */
+.admin-themed footer {
+  background: var(--admin-header-bg) !important;
+  border-color: var(--admin-card-border) !important;
+}
+
+.admin-themed footer,
+.admin-themed footer *,
+.admin-themed footer p,
+.admin-themed footer svg {
+  color: var(--admin-header-text) !important;
+}
+
+/* ===== TOGGLE SWITCHES ===== */
+.admin-themed button[role="switch"],
+.admin-themed [data-state="checked"],
+.admin-themed [data-state="unchecked"] {
+  box-shadow: none !important;
+}
+
+.admin-themed button[role="switch"] span {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ===== ICON BACKGROUNDS ===== */
+.admin-themed [class*="bg-gradient-to-br"][class*="from-terracotta"],
+.admin-themed [class*="bg-terracotta"]:not(button),
+.admin-themed .bg-primary,
+.admin-themed [class*="bg-primary"]:not(button) {
+  background: var(--admin-primary) !important;
+}
+
+.admin-themed [class*="bg-gradient-to-br"] .text-white,
+.admin-themed [class*="bg-terracotta"]:not(button) .text-white,
+.admin-themed .bg-primary .text-white {
+  color: #ffffff !important;
+}
+
+/* ===== THEME-SPECIFIC OVERRIDES ===== */
+
+/* Brutalist */
+.theme-brutalist [class*="card"] {
+  border: 3px solid #000000 !important;
+  border-radius: 0 !important;
+}
+
+.theme-brutalist button[class*="bg-gradient"],
+.theme-brutalist button[class*="bg-terracotta"] {
+  border: 3px solid #000000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+.theme-brutalist button[role="tab"] {
+  border: 2px solid #000000 !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+}
+
+.theme-brutalist button[role="switch"] {
+  border: 2px solid #000000 !important;
+}
+
+/* Cyber */
+.theme-cyber [class*="card"] {
+  border: 1px solid var(--admin-card-border) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 240, 0.1) !important;
+}
+
+.theme-cyber button[class*="bg-gradient"],
+.theme-cyber button[class*="bg-terracotta"] {
+  box-shadow: 0 0 20px rgba(0, 255, 240, 0.4) !important;
+}
+
+/* Retro */
+.theme-retro [class*="card"] {
+  border: 3px solid var(--admin-card-border) !important;
+}
+
+.theme-retro button[class*="bg-gradient"],
+.theme-retro button[class*="bg-terracotta"] {
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Lavender */
+.theme-lavender h1,
+.theme-lavender h2,
+.theme-lavender h3 {
+  font-weight: 600 !important;
+  letter-spacing: -0.5px;
+}

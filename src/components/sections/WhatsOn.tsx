@@ -4,19 +4,22 @@ import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { EventCard } from '@/components/shared/EventCard';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
-import type { WhatsOnContent } from '@/types/content';
+import type { WhatsOnContent, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface WhatsOnProps {
   whatsOn: WhatsOnContent;
+  colorScheme?: ColorScheme;
 }
 
-export function WhatsOn({ whatsOn }: WhatsOnProps) {
+export function WhatsOn({ whatsOn, colorScheme }: WhatsOnProps) {
+  const scheme = getColorScheme(colorScheme);
 
   return (
-    <section id="whats-on" className="py-section-lg bg-terracotta">
+    <section id="whats-on" className={`py-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif text-display-md text-cream mb-12 text-center tracking-normal">
+          <h2 className={`font-serif text-display-md ${scheme.heading} mb-12 text-center tracking-normal`}>
             {whatsOn.heading}
           </h2>
         </AnimatedSection>
@@ -30,7 +33,7 @@ export function WhatsOn({ whatsOn }: WhatsOnProps) {
         >
           {whatsOn.events.map((event, index) => (
             <motion.div key={index} variants={staggerItem} className="h-full">
-              <EventCard event={event} />
+              <EventCard event={event} colorScheme={colorScheme} />
             </motion.div>
           ))}
         </motion.div>

@@ -5,16 +5,19 @@ import { TiltingGlass } from '@/components/shared/TiltingGlass';
 import { Button } from '@/components/ui/button';
 import { fadeIn } from '@/lib/animations';
 import { ExternalLink } from 'lucide-react';
-import type { HungryContent } from '@/types/content';
+import type { HungryContent, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface HungryProps {
   hungry: HungryContent;
+  colorScheme?: ColorScheme;
 }
 
-export function Hungry({ hungry }: HungryProps) {
+export function Hungry({ hungry, colorScheme }: HungryProps) {
+  const scheme = getColorScheme(colorScheme);
 
   return (
-    <section className="py-section-lg xl:pt-0 bg-cream text-navy">
+    <section className={`py-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         {/* Mobile: centered layout, Desktop: two-column layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
@@ -27,7 +30,7 @@ export function Hungry({ hungry }: HungryProps) {
           <div className="w-full lg:w-2/3">
             <div className="max-w-3xl mx-auto text-center lg:text-left">
               <AnimatedSection variants={fadeIn}>
-                <h2 className="font-serif text-display-md mb-8 tracking-normal">
+                <h2 className={`font-serif text-display-md ${scheme.heading} mb-8 tracking-normal`}>
                   {hungry.heading}
                 </h2>
               </AnimatedSection>
@@ -35,9 +38,11 @@ export function Hungry({ hungry }: HungryProps) {
               <AnimatedSection variants={fadeIn} delay={0.2}>
                 <div className="space-y-4 mb-8">
                   {hungry.description.map((paragraph, index) => (
-                    <p key={index} className="text-body-lg leading-relaxed text-navy/80">
-                      {paragraph}
-                    </p>
+                    <div
+                      key={index}
+                      className={`text-body-lg leading-relaxed ${scheme.text} prose prose-lg max-w-none`}
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
                   ))}
                 </div>
               </AnimatedSection>
@@ -49,7 +54,7 @@ export function Hungry({ hungry }: HungryProps) {
                       asChild
                       size="lg"
                       variant="outline"
-                      className="border-2 border-navy text-navy hover:bg-navy hover:text-cream"
+                      className={`border-2 ${colorScheme === 'dark' ? 'border-cream text-cream hover:bg-cream hover:text-navy' : 'border-navy text-navy hover:bg-navy hover:text-cream'}`}
                     >
                       <a
                         href={hungry.partnerLink}

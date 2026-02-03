@@ -4,24 +4,28 @@ import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { WineCard } from '@/components/shared/WineCard';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
-import type { MenuContent } from '@/types/content';
+import type { MenuContent, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface MenuProps {
   menu: MenuContent;
+  colorScheme?: ColorScheme;
 }
 
-export function Menu({ menu }: MenuProps) {
+export function Menu({ menu, colorScheme }: MenuProps) {
+  const scheme = getColorScheme(colorScheme);
+
   return (
-    <section id="menu" className="pt-section-lg bg-cream">
+    <section id="menu" className={`py-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif text-display-md text-navy mb-12 text-center tracking-normal">
+          <h2 className={`font-serif text-display-md ${scheme.heading} mb-12 text-center tracking-normal`}>
             {menu.heading}
           </h2>
         </AnimatedSection>
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
+            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase`}>
               {menu.byTheGlass.heading}
             </h3>
           </AnimatedSection>
@@ -35,7 +39,7 @@ export function Menu({ menu }: MenuProps) {
           >
             {menu.byTheGlass.items.map((wine, index) => (
               <motion.div key={index} variants={staggerItem}>
-                <WineCard wine={wine} />
+                <WineCard wine={wine} colorScheme={colorScheme} />
               </motion.div>
             ))}
           </motion.div>
@@ -43,7 +47,7 @@ export function Menu({ menu }: MenuProps) {
 
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className="font-serif text-heading-lg text-terracotta mb-8 tracking-normal uppercase">
+            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase`}>
               {menu.byTheBottle.heading}
             </h3>
           </AnimatedSection>
@@ -51,7 +55,7 @@ export function Menu({ menu }: MenuProps) {
           <div className="space-y-12">
             {menu.byTheBottle.categories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h4 className="font-serif text-heading-md text-navy mb-6 tracking-normal uppercase">
+                <h4 className={`font-serif text-heading-md ${scheme.text} mb-6 tracking-normal uppercase`}>
                   {category.name}
                 </h4>
                 <motion.div
@@ -63,7 +67,7 @@ export function Menu({ menu }: MenuProps) {
                 >
                   {category.items.map((wine, wineIndex) => (
                     <motion.div key={wineIndex} variants={staggerItem}>
-                      <WineCard wine={wine} />
+                      <WineCard wine={wine} colorScheme={colorScheme} />
                     </motion.div>
                   ))}
                 </motion.div>

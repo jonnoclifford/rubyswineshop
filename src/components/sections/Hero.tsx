@@ -5,18 +5,21 @@ import { ChevronDown } from 'lucide-react';
 import { heroText, staggerContainer, staggerItem } from '@/lib/animations';
 import { AnimatedLogo } from '@/components/shared/AnimatedLogo';
 import { useParallax } from '@/lib/hooks/useParallax';
-import type { HeroContent } from '@/types/content';
+import type { HeroContent, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface HeroProps {
   hero: HeroContent;
+  colorScheme?: ColorScheme;
 }
 
-export function Hero({ hero }: HeroProps) {
+export function Hero({ hero, colorScheme }: HeroProps) {
   const { ref: parallaxRef, y } = useParallax(100);
   const shouldReduceMotion = useReducedMotion();
+  const scheme = getColorScheme(colorScheme);
 
   return (
-    <section ref={parallaxRef} className="relative h-screen w-full overflow-hidden bg-cream">
+    <section ref={parallaxRef} className={`relative h-screen w-full overflow-hidden ${scheme.bg}`}>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-6 lg:px-8 w-full -mt-[80px] xl:mt-0">
             {/* Mobile: Centered Animated Logo with Heading */}
@@ -35,14 +38,14 @@ export function Hero({ hero }: HeroProps) {
               >
                 <motion.h1
                   variants={heroText}
-                  className="font-serif text-display-md text-navy mb-6 tracking-normal"
+                  className={`font-serif text-display-md ${scheme.heading} mb-6 tracking-normal`}
                 >
                   {hero.headline}
                 </motion.h1>
 
                 <motion.p
                   variants={staggerItem}
-                  className="text-body-lg md:text-heading-sm text-navy/80"
+                  className={`text-body-lg md:text-heading-sm ${scheme.text}`}
                 >
                   {hero.subheadline}
                 </motion.p>
@@ -77,7 +80,7 @@ export function Hero({ hero }: HeroProps) {
             }}
             aria-label="Scroll to next section"
           >
-            <ChevronDown className="w-8 h-8 text-terracotta" />
+            <ChevronDown className={`w-8 h-8 ${scheme.accent}`} />
           </motion.button>
         </div>
     </section>

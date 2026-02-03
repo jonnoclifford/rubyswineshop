@@ -4,20 +4,23 @@ import { AnimatedSection } from '@/components/shared/AnimatedSection';
 import { slideInLeft, slideInRight, fadeIn } from '@/lib/animations';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import Image from 'next/image';
-import type { FindUsContent, BusinessInfo } from '@/types/content';
+import type { FindUsContent, BusinessInfo, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface FindUsProps {
   findUs: FindUsContent;
   business: BusinessInfo;
+  colorScheme?: ColorScheme;
 }
 
-export function FindUs({ findUs, business }: FindUsProps) {
+export function FindUs({ findUs, business, colorScheme }: FindUsProps) {
+  const scheme = getColorScheme(colorScheme);
 
   return (
-    <section id="find-us" className="py-section-lg bg-cream">
+    <section id="find-us" className={`py-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif tracking-normal text-display-md text-navy mb-12 text-center">
+          <h2 className={`font-serif tracking-normal text-display-md ${scheme.heading} mb-12 text-center`}>
             {findUs.heading}
           </h2>
         </AnimatedSection>
@@ -60,19 +63,19 @@ export function FindUs({ findUs, business }: FindUsProps) {
           {/* Contact Info */}
           <AnimatedSection variants={slideInRight}>
             <div>
-              <h3 className="font-serif tracking-normal text-heading-lg text-navy mb-6">
+              <h3 className={`font-serif tracking-normal text-heading-lg ${scheme.heading} mb-6`}>
                 {findUs.contactHeading}
               </h3>
 
               <div className="space-y-6">
                 {/* Address */}
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                  <MapPin className={`w-6 h-6 ${scheme.accent} flex-shrink-0 mt-1`} />
                   <div>
-                    <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                    <h4 className={`font-serif tracking-normal text-heading-sm ${scheme.heading} mb-1`}>
                       Address
                     </h4>
-                    <address className="text-body-md text-navy/80 not-italic">
+                    <address className={`text-body-md ${scheme.text} not-italic`}>
                       {business.address.street}<br />
                       {business.address.suburb}, {business.address.state} {business.address.postcode}
                     </address>
@@ -82,14 +85,14 @@ export function FindUs({ findUs, business }: FindUsProps) {
                 {/* Phone */}
                 {business.contact.phone && (
                   <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <Phone className={`w-6 h-6 ${scheme.accent} flex-shrink-0 mt-1`} />
                     <div>
-                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                      <h4 className={`font-serif tracking-normal text-heading-sm ${scheme.heading} mb-1`}>
                         Phone
                       </h4>
                       <a
                         href={`tel:${business.contact.phone}`}
-                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                        className={`text-body-md ${scheme.text} hover:${scheme.accent} transition-colors`}
                       >
                         {business.contact.phone}
                       </a>
@@ -100,14 +103,14 @@ export function FindUs({ findUs, business }: FindUsProps) {
                 {/* Email */}
                 {business.contact.email && (
                   <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <Mail className={`w-6 h-6 ${scheme.accent} flex-shrink-0 mt-1`} />
                     <div>
-                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                      <h4 className={`font-serif tracking-normal text-heading-sm ${scheme.heading} mb-1`}>
                         Email
                       </h4>
                       <a
                         href={`mailto:${business.contact.email}`}
-                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                        className={`text-body-md ${scheme.text} hover:${scheme.accent} transition-colors`}
                       >
                         {business.contact.email}
                       </a>
@@ -118,16 +121,16 @@ export function FindUs({ findUs, business }: FindUsProps) {
                 {/* Instagram */}
                 {business.contact.instagram && (
                   <div className="flex items-start gap-4">
-                    <Instagram className="w-6 h-6 text-terracotta flex-shrink-0 mt-1" />
+                    <Instagram className={`w-6 h-6 ${scheme.accent} flex-shrink-0 mt-1`} />
                     <div>
-                      <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-1">
+                      <h4 className={`font-serif tracking-normal text-heading-sm ${scheme.heading} mb-1`}>
                         Instagram
                       </h4>
                       <a
                         href={`https://instagram.com/${business.contact.instagram.replace('@', '')}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-body-md text-navy/80 hover:text-terracotta transition-colors"
+                        className={`text-body-md ${scheme.text} hover:${scheme.accent} transition-colors`}
                       >
                         {business.contact.instagram}
                       </a>
@@ -136,8 +139,8 @@ export function FindUs({ findUs, business }: FindUsProps) {
                 )}
 
                 {/* Hours */}
-                <div className="pt-6 border-t border-navy/10">
-                  <h4 className="font-serif tracking-normal text-heading-sm text-navy mb-4">
+                <div className={`pt-6 border-t ${colorScheme === 'dark' ? 'border-cream/10' : 'border-navy/10'}`}>
+                  <h4 className={`font-serif tracking-normal text-heading-sm ${scheme.heading} mb-4`}>
                     Opening Hours
                   </h4>
                   <div className="space-y-2">
@@ -146,8 +149,8 @@ export function FindUs({ findUs, business }: FindUsProps) {
                         key={day}
                         className="flex justify-between text-body-md"
                       >
-                        <span className="text-navy/70">{day}</span>
-                        <span className={hours === 'Closed' ? 'text-navy/40' : 'text-navy font-medium'}>
+                        <span className={scheme.text}>{day}</span>
+                        <span className={`${hours === 'Closed' ? (colorScheme === 'dark' ? 'text-cream/40' : 'text-navy/40') : scheme.heading} font-medium`}>
                           {hours}
                         </span>
                       </div>

@@ -9,19 +9,22 @@ import {
 } from '@/components/ui/accordion';
 import Image from 'next/image';
 import { slideInLeft, slideInRight } from '@/lib/animations';
-import type { FAQContent } from '@/types/content';
+import type { FAQContent, ColorScheme } from '@/types/content';
+import { getColorScheme } from '@/lib/color-schemes';
 
 interface FAQProps {
   faq: FAQContent;
+  colorScheme?: ColorScheme;
 }
 
-export function FAQ({ faq }: FAQProps) {
+export function FAQ({ faq, colorScheme }: FAQProps) {
+  const scheme = getColorScheme(colorScheme);
 
   return (
-    <section className="py-section-lg bg-cream-dark">
+    <section className={`py-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         <AnimatedSection>
-          <h2 className="font-serif text-display-md text-navy mb-12 text-center tracking-normal">
+          <h2 className={`font-serif text-display-md ${scheme.heading} mb-12 text-center tracking-normal`}>
             {faq.heading}
           </h2>
         </AnimatedSection>
@@ -37,10 +40,10 @@ export function FAQ({ faq }: FAQProps) {
                     value={`item-${index}`}
                     className="border-b border-navy/10 py-2"
                   >
-                    <AccordionTrigger className="text-body-lg text-navy hover:text-terracotta tracking-normal font-medium">
+                    <AccordionTrigger className={`text-body-lg ${scheme.heading} hover:${scheme.accent} tracking-normal font-medium`}>
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-body-md text-navy/70 leading-relaxed">
+                    <AccordionContent className={`text-body-md ${scheme.text} leading-relaxed`}>
                       {item.answer}
                     </AccordionContent>
                   </AccordionItem>

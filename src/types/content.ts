@@ -150,6 +150,40 @@ export interface SEOContent {
   ogImage: string;
 }
 
+// Media library metadata
+export interface ImageMetadata {
+  filename: string;
+  path: string;
+  alt?: string;
+  caption?: string;
+  folder?: string;
+  uploadedAt: string;
+  size: number;
+}
+
+export interface MediaLibrary {
+  images: ImageMetadata[];
+}
+
+// Section configuration for visibility and theming
+export type ColorScheme = 'light' | 'dark' | 'terracotta' | 'cream';
+
+export interface SectionConfig {
+  enabled: boolean;
+  order: number;
+  colorScheme?: ColorScheme;
+}
+
+export interface SectionSettings {
+  hero: SectionConfig;
+  about: SectionConfig;
+  menu: SectionConfig;
+  hungry: SectionConfig;
+  whatsOn: SectionConfig;
+  faq: SectionConfig;
+  findUs: SectionConfig;
+}
+
 export interface SiteConfig {
   header: HeaderContent;
   business: BusinessInfo;
@@ -162,6 +196,9 @@ export interface SiteConfig {
   walkInModal: WalkInModalContent;
   findUs: FindUsContent;
   seo: SEOContent;
+  media?: MediaLibrary; // Optional - image metadata
+  forms?: import('@/types/form-builder').FormsConfig; // Optional - custom forms
+  sectionSettings?: SectionSettings; // Optional for backwards compatibility
 }
 
 // CMS utility types

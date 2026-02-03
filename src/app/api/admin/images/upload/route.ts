@@ -7,7 +7,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getCurrentUser } from '@/lib/auth';
-import { uploadImage, GitHubAPIError } from '@/lib/github-api';
+import { uploadImage, GitHubAPIError, readConfig, updateConfig } from '@/lib/github-api';
+import type { SiteConfig } from '@/types/content';
 
 // Maximum file size: 5MB
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
@@ -67,6 +68,7 @@ export async function POST(request: NextRequest) {
     // Parse FormData
     const formData = await request.formData();
     const file = formData.get('file') as File;
+    const folder = formData.get('folder') as string || 'Other';
 
     if (!file) {
       return NextResponse.json(
@@ -109,6 +111,40 @@ export async function POST(request: NextRequest) {
 
     // Upload image to GitHub
     const result = await uploadImage(file, sanitizedFilename);
+
+    // Save metadata to config
+    try {
+      const config: SiteConfig = await readConfig();
+
+      if (!config.media) {
+        config.media = { images: [] };
+      }
+
+      // Add or update image metadata
+      const existingIndex = config.media.images.findIndex(img => img.filename === sanitizedFilename);
+
+      const metadata = {
+        filename: sanitizedFilename,
+        path: `/images/${sanitizedFilename}`,
+        folder,
+        uploadedAt: new Date().toISOString(),
+        size: file.size,
+      };
+
+      if (existingIndex >= 0) {
+        config.media.images[existingIndex] = {
+          ...config.media.images[existingIndex],
+          ...metadata,
+        };
+      } else {
+        config.media.images.push(metadata);
+      }
+
+      await updateConfig(config, `Upload image: ${sanitizedFilename}`);
+    } catch (metadataError) {
+      console.error('Failed to save image metadata:', metadataError);
+      // Continue even if metadata save fails
+    }
 
     return NextResponse.json({
       success: true,
