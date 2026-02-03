@@ -297,12 +297,12 @@
     },
     "about": {
       "enabled": true,
-      "order": 1,
+      "order": 2,
       "colorScheme": "light"
     },
     "menu": {
       "enabled": true,
-      "order": 2,
+      "order": 1,
       "colorScheme": "dark"
     },
     "hungry": {
