@@ -30,19 +30,27 @@ export function Menu({ menu, colorScheme }: MenuProps) {
             </h3>
           </AnimatedSection>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          >
-            {menu.byTheGlass.items.map((wine, index) => (
-              <motion.div key={index} variants={staggerItem}>
-                <WineCard wine={wine} colorScheme={colorScheme} />
-              </motion.div>
-            ))}
-          </motion.div>
+          {menu.byTheGlass.description ? (
+            <AnimatedSection>
+              <p className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl`}>
+                {menu.byTheGlass.description}
+              </p>
+            </AnimatedSection>
+          ) : (
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            >
+              {menu.byTheGlass.items.map((wine, index) => (
+                <motion.div key={index} variants={staggerItem}>
+                  <WineCard wine={wine} colorScheme={colorScheme} />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
 
         <div className="mb-16">

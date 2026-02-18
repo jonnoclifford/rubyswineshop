@@ -77,6 +77,7 @@ export interface MenuContent {
   heading: string;
   byTheGlass: {
     heading: string;
+    description?: string;
     items: WineItem[];
   };
   byTheBottle: {
@@ -105,6 +106,10 @@ export interface Event {
   time?: string;
   description: string;
   recurring?: boolean;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 export interface WhatsOnContent {

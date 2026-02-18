@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Event, ColorScheme } from '@/types/content';
 import { Calendar, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 interface EventCardProps {
   event: Event;
@@ -34,7 +35,18 @@ export function EventCard({ event, colorScheme }: EventCardProps) {
     : 'bg-navy/10 text-navy';
 
   return (
-    <Card className={`${borderColor} ${cardBg} hover:shadow-md transition-shadow h-full flex flex-col`}>
+    <Card className={`${borderColor} ${cardBg} hover:shadow-md transition-shadow h-full flex flex-col overflow-hidden`}>
+      {event.image && (
+        <div className="relative w-full aspect-[4/5]">
+          <Image
+            src={event.image.src}
+            alt={event.image.alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+      )}
       <CardContent className="p-6 flex-1 flex flex-col">
         <div className="flex items-start gap-3 mb-3">
           <Calendar className={`w-5 h-5 ${accentColor} flex-shrink-0 mt-1`} />

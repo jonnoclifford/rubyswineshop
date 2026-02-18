@@ -38,8 +38,8 @@
     "partnerName": "Olive Thyme",
     "partnerLink": "https://www.olivethyme.com.au",
     "image": {
-      "src": "/images/hungry-section.jpg",
-      "alt": "Delicious food from Olive Thyme restaurant"
+      "src": "/images/wine-glasses.webp",
+      "alt": "Two glasses of natural wine at Ruby's Wine Shop"
     }
   },
   "header": {
@@ -72,33 +72,34 @@
       "With over 100 bottles on the shelf and 6 to 8 rotating daily pours, including our own house-made Pet Nat, there is always something new to try. We keep things simple with 20 seats and a walk-ins only policy. Bring your own snacks or scan a QR code to have modern Turkish meze from our neighbors at Olive Thyme delivered straight to your stool."
     ],
     "image": {
-      "src": "/images/ruby-and-owner.webp",
-      "alt": "Ruby the border collie with her owner at Ruby's Wine Shop"
+      "src": "/images/ruby-and-owner-new.webp",
+      "alt": "Ruby the border collie jumping up to greet her owner at Ruby's Wine Shop"
     }
   },
   "whatsOn": {
     "heading": "What's On",
     "events": [
       {
-        "title": "Sunday Sessions",
-        "date": "Every Sunday",
-        "time": "2:00 PM - 9:00 PM",
-        "description": "Live acoustic sets from local musicians. No cover charge, just good tunes and great wine.",
-        "recurring": true
+        "title": "Ruby Turns 7!",
+        "date": "Friday 21st February",
+        "time": "12:00 PM - 9:00 PM",
+        "description": "Join us to celebrate Ruby's 7th birthday party! Come say happy birthday to everyone's favourite wine bar pup.",
+        "recurring": false,
+        "image": {
+          "src": "/images/event-ruby-birthday.webp",
+          "alt": "Ruby Turns 7 birthday party flyer"
+        }
       },
       {
-        "title": "Winemaker Tastings",
-        "date": "First Thursday of the month",
-        "time": "6:00 PM - 8:00 PM",
-        "description": "Meet the makers behind your favourite bottles. Guided tastings with natural winemakers from around Australia.",
-        "recurring": true
-      },
-      {
-        "title": "Natural Wine 101",
-        "date": "Last Saturday of the month",
-        "time": "3:00 PM - 5:00 PM",
-        "description": "New to natural wine? Join us for a relaxed introduction to low-intervention winemaking, funky fermentation, and what makes these wines special.",
-        "recurring": true
+        "title": "Swiss Wine Night",
+        "date": "Saturday 28th February",
+        "time": "From 3:00 PM",
+        "description": "Come try and discover the art of Swiss wine with Daniel Sangermani from Invidia Wines.",
+        "recurring": false,
+        "image": {
+          "src": "/images/event-swiss-wine-night.webp",
+          "alt": "Swiss Wine Night with Daniel Sangermani from Invidia Wines"
+        }
       }
     ]
   },
@@ -131,8 +132,8 @@
       }
     ],
     "image": {
-      "src": "/images/storefront-window.jpg",
-      "alt": "Ruby's Wine Shop storefront window with logo"
+      "src": "/images/storefront-new.webp",
+      "alt": "Ruby's Wine Shop storefront with logo and warm interior lighting"
     }
   },
   "findUs": {
@@ -186,36 +187,8 @@
     "heading": "What We're Pouring",
     "byTheGlass": {
       "heading": "By the Glass",
-      "items": [
-        {
-          "name": "Skin Contact Pinot Gris",
-          "producer": "Lucy Margaux",
-          "region": "Adelaide Hills, SA",
-          "price": "$16",
-          "description": "Cloudy amber with dried apricot and chamomile notes"
-        },
-        {
-          "name": "Pét-Nat Chardonnay",
-          "producer": "Commune of Buttons",
-          "region": "Basket Range, SA",
-          "price": "$14",
-          "description": "Lightly sparkling, crisp green apple and lemon zest"
-        },
-        {
-          "name": "Gamay Noir",
-          "producer": "Gentle Folk",
-          "region": "Adelaide Hills, SA",
-          "price": "$15",
-          "description": "Juicy cherry, light body, minimal tannins"
-        },
-        {
-          "name": "Sangiovese",
-          "producer": "Koltz",
-          "region": "Adelaide Hills, SA",
-          "price": "$17",
-          "description": "Bright red fruit with subtle earth and spice"
-        }
-      ]
+      "description": "Taste your way through our rotating daily selection — Ruby's picks. Always 2 whites, rosé, skin contact and a few reds plus the odd special.",
+      "items": []
     },
     "byTheBottle": {
       "heading": "By the Bottle",
