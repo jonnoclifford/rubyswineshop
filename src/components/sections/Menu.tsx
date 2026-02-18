@@ -16,8 +16,8 @@ export function Menu({ menu, colorScheme }: MenuProps) {
   const scheme = getColorScheme(colorScheme);
 
   return (
-    <section id="menu" className={`py-section-lg ${scheme.bg}`}>
-      <div className="container mx-auto px-6 lg:px-8">
+    <section id="menu" className={`pt-section-lg pb-section-sm ${scheme.bg}`}>
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <AnimatedSection>
           <h2 className={`font-serif text-display-md ${scheme.heading} mb-12 text-center tracking-normal`}>
             {menu.heading}
@@ -25,14 +25,14 @@ export function Menu({ menu, colorScheme }: MenuProps) {
         </AnimatedSection>
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase`}>
+            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase text-center`}>
               {menu.byTheGlass.heading}
             </h3>
           </AnimatedSection>
 
           {menu.byTheGlass.description ? (
             <AnimatedSection>
-              <p className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl`}>
+              <p className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl mx-auto text-center`}>
                 {menu.byTheGlass.description}
               </p>
             </AnimatedSection>
@@ -55,14 +55,14 @@ export function Menu({ menu, colorScheme }: MenuProps) {
 
         <div className="mb-16">
           <AnimatedSection>
-            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase`}>
+            <h3 className={`font-serif text-heading-lg ${scheme.accent} mb-8 tracking-normal uppercase text-center`}>
               {menu.byTheBottle.heading}
             </h3>
           </AnimatedSection>
 
           {menu.byTheBottle.description ? (
             <AnimatedSection>
-              <div className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl space-y-4`}>
+              <div className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl mx-auto text-center space-y-4`}>
                 {menu.byTheBottle.description.split('\n\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

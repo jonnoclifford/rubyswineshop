@@ -29,10 +29,10 @@ export function WhatsOn({ whatsOn, colorScheme }: WhatsOnProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto"
         >
           {whatsOn.events.map((event, index) => (
-            <motion.div key={index} variants={staggerItem} className="h-full">
+            <motion.div key={index} variants={staggerItem} className="h-full w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <EventCard event={event} colorScheme={colorScheme} />
             </motion.div>
           ))}

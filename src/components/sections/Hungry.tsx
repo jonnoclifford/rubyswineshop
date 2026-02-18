@@ -17,7 +17,7 @@ export function Hungry({ hungry, colorScheme }: HungryProps) {
   const scheme = getColorScheme(colorScheme);
 
   return (
-    <section className={`py-section-lg ${scheme.bg}`}>
+    <section className={`pt-section-sm pb-section-lg ${scheme.bg}`}>
       <div className="container mx-auto px-6 lg:px-8">
         {/* Mobile: centered layout, Desktop: two-column layout */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">

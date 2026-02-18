@@ -74,7 +74,7 @@ export function TiltingGlass({
 
     return (
       <div className="hidden lg:block relative bg-cream">
-        <div className={`absolute ${horizontalPosition} -translate-y-3/4 top-0 z-10`}>
+        <div className={`absolute ${horizontalPosition} -translate-y-3/4 top-0 z-0`}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}

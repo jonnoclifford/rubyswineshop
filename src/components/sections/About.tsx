@@ -16,7 +16,7 @@ export function About({ about, colorScheme }: AboutProps) {
 
   return (
     <section id="about" className={`py-section-lg ${scheme.bg}`}>
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           <AnimatedSection variants={slideInLeft} className="lg:col-span-2">
             <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0">
