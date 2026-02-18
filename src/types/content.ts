@@ -82,6 +82,7 @@ export interface MenuContent {
   };
   byTheBottle: {
     heading: string;
+    description?: string;
     categories: {
       name: string;
       items: WineItem[];

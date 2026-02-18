@@ -60,28 +60,38 @@ export function Menu({ menu, colorScheme }: MenuProps) {
             </h3>
           </AnimatedSection>
 
-          <div className="space-y-12">
-            {menu.byTheBottle.categories.map((category, categoryIndex) => (
-              <div key={categoryIndex}>
-                <h4 className={`font-serif text-heading-md ${scheme.text} mb-6 tracking-normal uppercase`}>
-                  {category.name}
-                </h4>
-                <motion.div
-                  variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: '-100px' }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                >
-                  {category.items.map((wine, wineIndex) => (
-                    <motion.div key={wineIndex} variants={staggerItem}>
-                      <WineCard wine={wine} colorScheme={colorScheme} />
-                    </motion.div>
-                  ))}
-                </motion.div>
+          {menu.byTheBottle.description ? (
+            <AnimatedSection>
+              <div className={`text-body-lg ${scheme.text} leading-relaxed max-w-2xl space-y-4`}>
+                {menu.byTheBottle.description.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
-            ))}
-          </div>
+            </AnimatedSection>
+          ) : (
+            <div className="space-y-12">
+              {menu.byTheBottle.categories.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <h4 className={`font-serif text-heading-md ${scheme.text} mb-6 tracking-normal uppercase`}>
+                    {category.name}
+                  </h4>
+                  <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-100px' }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                  >
+                    {category.items.map((wine, wineIndex) => (
+                      <motion.div key={wineIndex} variants={staggerItem}>
+                        <WineCard wine={wine} colorScheme={colorScheme} />
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
       </div>

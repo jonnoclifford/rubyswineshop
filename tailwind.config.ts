@@ -41,17 +41,17 @@ const config: Config = {
   	extend: {
   		colors: {
   			terracotta: {
-  				DEFAULT: '#C75435',
-  				dark: '#A4452B',
-  				light: '#D47052'
+  				DEFAULT: '#ba5b3e',
+  				dark: '#9c4c34',
+  				light: '#cf7359'
   			},
   			cream: {
-  				DEFAULT: '#F5F0E8',
-  				dark: '#EDE5D8'
+  				DEFAULT: '#f2ebd7',
+  				dark: '#e8dfc8'
   			},
   			navy: {
-  				DEFAULT: '#1A3470',
-  				light: '#3B82F6'
+  				DEFAULT: '#470606',
+  				light: '#6b1a1a'
   			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
