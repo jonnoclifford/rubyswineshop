@@ -18,10 +18,10 @@
       "Monday": "Closed",
       "Tuesday": "Closed",
       "Wednesday": "4:00 PM - 9:00 PM",
-      "Thursday": "4:00 PM - 10:00 PM",
-      "Friday": "4:00 PM - 11:00 PM",
-      "Saturday": "2:00 PM - 11:00 PM",
-      "Sunday": "2:00 PM - 9:00 PM"
+      "Thursday": "12:00 PM - 9:00 PM",
+      "Friday": "12:00 PM - 9:00 PM",
+      "Saturday": "12:00 PM - 9:00 PM",
+      "Sunday": "12:00 PM - 9:00 PM"
     },
     "coordinates": {
       "lat": -27.4305,
@@ -124,11 +124,11 @@
       },
       {
         "question": "What are your opening hours?",
-        "answer": "We're open Wednesday and Thursday from 4 PM, Friday from 4 PM, and weekends from 2 PM. Closed Monday and Tuesday. Check the top of the page for exact closing times."
+        "answer": "We're open Wednesday from 4 PM and Thursday to Sunday from 12 PM. We close at 9 PM every night. Closed Monday and Tuesday."
       },
       {
         "question": "Where can I park?",
-        "answer": "There's street parking on Sandgate Road and surrounding streets. It's free after 7 PM on weekdays and all day on weekends. Albion train station is a 5-minute walk if you're taking public transport."
+        "answer": "There's a free car park out the back, plus street parking on Sandgate Road and surrounding streets. Albion train station is a 5-minute walk if you're taking public transport."
       }
     ],
     "image": {
