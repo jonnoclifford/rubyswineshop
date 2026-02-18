@@ -217,7 +217,7 @@
       "colorScheme": "light"
     },
     "menu": {
-      "enabled": false,
+      "enabled": true,
       "order": 2,
       "colorScheme": "light"
     },
