@@ -87,6 +87,13 @@ export function EventForm({ initialData, onSave }: EventFormProps) {
     setFormData({ ...formData, events: newEvents });
   };
 
+  const updateEventImage = (index: number, field: 'src' | 'alt', value: string) => {
+    const newEvents = [...formData.events];
+    const currentImage = newEvents[index].image || { src: '', alt: '' };
+    newEvents[index] = { ...newEvents[index], image: { ...currentImage, [field]: value } };
+    setFormData({ ...formData, events: newEvents });
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <Card className="shadow-md border-gray-200">
@@ -185,6 +192,30 @@ export function EventForm({ initialData, onSave }: EventFormProps) {
                 {errors[`event-${index}-description`] && (
                   <p className="text-sm text-red-500">{errors[`event-${index}-description`]}</p>
                 )}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor={`event-${index}-image-src`}>Event Image Path</Label>
+                  <Input
+                    id={`event-${index}-image-src`}
+                    value={event.image?.src || ''}
+                    onChange={(e) => updateEventImage(index, 'src', e.target.value)}
+                    placeholder="/images/event-flyer.webp"
+                  />
+                  <p className="text-sm text-muted-foreground">
+                    Copy the path from the Media Library and paste it here
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor={`event-${index}-image-alt`}>Image Description</Label>
+                  <Input
+                    id={`event-${index}-image-alt`}
+                    value={event.image?.alt || ''}
+                    onChange={(e) => updateEventImage(index, 'alt', e.target.value)}
+                    placeholder="e.g., Event flyer for Sunday Sessions"
+                  />
+                </div>
               </div>
 
               <div className="flex items-center space-x-2">
