@@ -100,6 +100,13 @@
           "src": "/images/event-swiss-wine-night.webp",
           "alt": "Swiss Wine Night with Daniel Sangermani from Invidia Wines"
         }
+      },
+      {
+        "title": "Ruby's Quiz Night",
+        "date": "Every second wednsday of the month from 6pm",
+        "time": "6pm-9pm",
+        "description": "Join us for our monthly quiz night, hosted by the famous Weekly Fifty! DM on instagram or email 2 weeks before date to book your team in. Spots are limited and book out fast! ",
+        "recurring": true
       }
     ]
   },
