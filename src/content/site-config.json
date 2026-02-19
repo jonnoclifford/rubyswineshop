@@ -248,5 +248,16 @@
       "order": 6,
       "colorScheme": "cream"
     }
+  },
+  "media": {
+    "images": [
+      {
+        "filename": "pub-quiz-night.webp",
+        "path": "/images/pub-quiz-night.webp",
+        "folder": "Other",
+        "uploadedAt": "2026-02-19T01:07:13.871Z",
+        "size": 264160
+      }
+    ]
   }
 }
