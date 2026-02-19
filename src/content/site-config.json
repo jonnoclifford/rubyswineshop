@@ -106,7 +106,11 @@
         "date": "Every second wednsday of the month from 6pm",
         "time": "6pm-9pm",
         "description": "Join us for our monthly quiz night, hosted by the famous Weekly Fifty! DM on Instagram or email 2 weeks before the date to book your team in. Spots are limited and book out fast! ",
-        "recurring": true
+        "recurring": true,
+        "image": {
+          "src": "/images/pub-quiz-night.webp",
+          "alt": ""
+        }
       }
     ]
   },
