@@ -111,6 +111,17 @@
           "src": "/images/pub-quiz-night.webp",
           "alt": "Monthly Quiz Night"
         }
+      },
+      {
+        "title": "Spanish Night ",
+        "date": "12th March",
+        "time": "from 4pm but pouring all day ",
+        "description": "Join us for a spanish themed evening with some snack specials and incredible spanish wines. Tom from Alimentaria, a melbourne based spanish wine distrubution company, will be sharig his expertise. So if you have wanted to learn more about spanish wine, here is your chance! \nWalk in only as usual and free - just sample and purchase a glass, bottle or more ",
+        "recurring": false,
+        "image": {
+          "src": "/images/berschrift-instagram-post-45-2.webp",
+          "alt": "Spanish night flyer "
+        }
       }
     ]
   },
@@ -252,16 +263,5 @@
       "order": 6,
       "colorScheme": "cream"
     }
-  },
-  "media": {
-    "images": [
-      {
-        "filename": "berschrift-instagram-post-45-2.webp",
-        "path": "/images/berschrift-instagram-post-45-2.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-02-28T00:25:25.296Z",
-        "size": 98684
-      }
-    ]
   }
 }
