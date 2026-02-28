@@ -252,5 +252,16 @@
       "order": 6,
       "colorScheme": "cream"
     }
+  },
+  "media": {
+    "images": [
+      {
+        "filename": "berschrift-instagram-post-45-2.webp",
+        "path": "/images/berschrift-instagram-post-45-2.webp",
+        "folder": "Other",
+        "uploadedAt": "2026-02-28T00:25:25.296Z",
+        "size": 98684
+      }
+    ]
   }
 }
