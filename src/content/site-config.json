@@ -248,5 +248,16 @@
       "order": 6,
       "colorScheme": "cream"
     }
+  },
+  "media": {
+    "images": [
+      {
+        "filename": "ff-x-ruby-s-tasting-social.webp",
+        "path": "/images/ff-x-ruby-s-tasting-social.webp",
+        "folder": "Other",
+        "uploadedAt": "2026-03-06T02:17:03.747Z",
+        "size": 988834
+      }
+    ]
   }
 }
