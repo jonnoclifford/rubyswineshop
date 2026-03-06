@@ -80,28 +80,6 @@
     "heading": "What's On",
     "events": [
       {
-        "title": "Ruby Turns 7!",
-        "date": "Friday 21st February",
-        "time": "12:00 PM - 9:00 PM",
-        "description": "Join us to celebrate Ruby's 7th birthday party! Come say happy birthday to everyone's favourite wine bar pup.",
-        "recurring": false,
-        "image": {
-          "src": "/images/event-ruby-birthday.webp",
-          "alt": "Ruby Turns 7 birthday party flyer"
-        }
-      },
-      {
-        "title": "Swiss Wine Night",
-        "date": "Saturday 28th February",
-        "time": "From 3:00 PM",
-        "description": "Come try and discover the art of Swiss wine with Daniel Sangermani from Invidia Wines.",
-        "recurring": false,
-        "image": {
-          "src": "/images/event-swiss-wine-night.webp",
-          "alt": "Swiss Wine Night with Daniel Sangermani from Invidia Wines"
-        }
-      },
-      {
         "title": "Ruby's Quiz Night",
         "date": "Every second wednsday of the month from 6pm",
         "time": "6pm-9pm",
@@ -122,6 +100,13 @@
           "src": "/images/berschrift-instagram-post-45-2.webp",
           "alt": "Spanish night flyer "
         }
+      },
+      {
+        "title": "Meet the Maker: Foreign Friends",
+        "date": "Friday 13th March",
+        "time": "5pm - 7pm",
+        "description": "Join us next Friday for another \"Meet the Maker\" event with no other than Juliette from the lovely Foreign Friends trio! \nBased in Beechworth, they produce some of Ruby's favourite drops. Come see for yourself.\nJust show up as usual and enjoy the wine, space and vibes!",
+        "recurring": false
       }
     ]
   },
