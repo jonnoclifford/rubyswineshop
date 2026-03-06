@@ -122,6 +122,17 @@
           "src": "/images/3sip-happens.webp",
           "alt": "Flyer for Meet on melt"
         }
+      },
+      {
+        "title": "Ruby's Milk Bar - Mothers Group",
+        "date": "Every last Thursday of the month ",
+        "time": "from 12 ",
+        "description": "New mum in the area? Join us for Ruby's Milk Bar! just roll on in, meet some friends, make new friends and relax. Babies welcome, however limited pram space. ",
+        "recurring": false,
+        "image": {
+          "src": "/images/mothers-group-115-x-158-mm-instagram-post-45.webp",
+          "alt": "Ruby's milk bar flyer"
+        }
       }
     ]
   },
@@ -263,16 +274,5 @@
       "order": 6,
       "colorScheme": "cream"
     }
-  },
-  "media": {
-    "images": [
-      {
-        "filename": "mothers-group-115-x-158-mm-instagram-post-45.webp",
-        "path": "/images/mothers-group-115-x-158-mm-instagram-post-45.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-03-06T03:15:06.114Z",
-        "size": 266502
-      }
-    ]
   }
 }
