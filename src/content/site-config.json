@@ -106,7 +106,11 @@
         "date": "Friday 13th March",
         "time": "5pm - 7pm",
         "description": "Join us next Friday for another \"Meet the Maker\" event with no other than Juliette from the lovely Foreign Friends trio! \nBased in Beechworth, they produce some of Ruby's favourite drops. Come see for yourself.\nJust show up as usual and enjoy the wine, space and vibes!",
-        "recurring": false
+        "recurring": false,
+        "image": {
+          "src": "/images/ff-x-ruby-s-tasting-social.webp",
+          "alt": "Foreign Friends event flyer"
+        }
       }
     ]
   },
@@ -248,16 +252,5 @@
       "order": 6,
       "colorScheme": "cream"
     }
-  },
-  "media": {
-    "images": [
-      {
-        "filename": "ff-x-ruby-s-tasting-social.webp",
-        "path": "/images/ff-x-ruby-s-tasting-social.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-03-06T02:17:03.747Z",
-        "size": 988834
-      }
-    ]
   }
 }
