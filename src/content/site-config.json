@@ -252,5 +252,16 @@
       "order": 6,
       "colorScheme": "cream"
     }
+  },
+  "media": {
+    "images": [
+      {
+        "filename": "3sip-happens.webp",
+        "path": "/images/3sip-happens.webp",
+        "folder": "Other",
+        "uploadedAt": "2026-03-06T02:24:18.558Z",
+        "size": 962545
+      }
+    ]
   }
 }
