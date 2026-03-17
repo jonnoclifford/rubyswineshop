@@ -144,6 +144,17 @@
           "src": "/images/aged-wine-tasting.webp",
           "alt": "Fine wine time event"
         }
+      },
+      {
+        "title": "Meet the Maker - Crusher Wines",
+        "date": "26th March ",
+        "time": "5 pm",
+        "description": "Stop in and meet Tom & Dom, the duo behind Crusher wines. We will have lots of amazing wine on hand for you to taste and purchase and learn from. Made in QLD, they represent an incredible wine growing area. Come and learn what makes QLD wine so unique!",
+        "recurring": false,
+        "image": {
+          "src": "/images/meet-the-maker.webp",
+          "alt": "meet the maker flyer "
+        }
       }
     ]
   },
