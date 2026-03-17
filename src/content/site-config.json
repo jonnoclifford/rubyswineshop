@@ -139,7 +139,11 @@
         "date": "25th March",
         "time": "6pm",
         "description": "Join Seb and Tamara at Ruby's Wine Shop for an evening exploring the magic of aged wines. Seb will be pouring a selection of wines side by side, including wines dating back to the 80s.so you can experience firsthand how wines evolve ofer time. \nAcross 10 wines, we will discuss what happens as a wine ages, the factors that influence its development, and the best ways to store and source older bottles. There will also be a special prize wine for the winner of out blind tasting challenge- and plenty of fun along the way. \n\nbookings via Seb's website https://finewinetime.com.au/shop/ols/products/aged-wine-night-at-rubys \ntickets are limited and only $50! So get in quick!",
-        "recurring": false
+        "recurring": false,
+        "image": {
+          "src": "/images/aged-wine-tasting.webp",
+          "alt": "Fine wine time event"
+        }
       }
     ]
   },
