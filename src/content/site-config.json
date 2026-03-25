@@ -1,7 +1,7 @@
 {
   "business": {
     "name": "Ruby's Wine Shop",
-    "tagline": "Natural wines & good vibes in Albion",
+    "tagline": "Great wines & good vibes in Albion",
     "address": {
       "street": "3/297 Sandgate Road",
       "suburb": "Albion",
@@ -21,7 +21,7 @@
       "Thursday": "12:00 PM - 9:00 PM",
       "Friday": "12:00 PM - 9:00 PM",
       "Saturday": "12:00 PM - 9:00 PM",
-      "Sunday": "12:00 PM - 9:00 PM"
+      "Sunday": "12:00 PM - 8:00 PM"
     },
     "coordinates": {
       "lat": -27.4305,
