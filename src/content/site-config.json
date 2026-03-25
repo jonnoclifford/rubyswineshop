@@ -91,28 +91,6 @@
         }
       },
       {
-        "title": "Spanish Night ",
-        "date": "12th March",
-        "time": "from 4pm but pouring all day ",
-        "description": "Join us for a spanish themed evening with some snack specials and incredible spanish wines. Tom from Alimentaria, a melbourne based spanish wine distrubution company, will be sharig his expertise. So if you have wanted to learn more about spanish wine, here is your chance! \nWalk in only as usual and free - just sample and purchase a glass, bottle or more ",
-        "recurring": false,
-        "image": {
-          "src": "/images/berschrift-instagram-post-45-2.webp",
-          "alt": "Spanish night flyer "
-        }
-      },
-      {
-        "title": "Meet the Maker: Foreign Friends",
-        "date": "Friday 13th March",
-        "time": "5pm - 7pm",
-        "description": "Join us next Friday for another \"Meet the Maker\" event with no other than Juliette from the lovely Foreign Friends trio! \nBased in Beechworth, they produce some of Ruby's favourite drops. Come see for yourself.\nJust show up as usual and enjoy the wine, space and vibes!",
-        "recurring": false,
-        "image": {
-          "src": "/images/ff-x-ruby-s-tasting-social.webp",
-          "alt": "Foreign Friends event flyer"
-        }
-      },
-      {
         "title": "Sip Happens, a curated singles wine tasting event",
         "date": "Saturday 28th March ",
         "time": "1pm-3pm",
