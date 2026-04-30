@@ -274,5 +274,16 @@
       "order": 6,
       "colorScheme": "cream"
     }
+  },
+  "media": {
+    "images": [
+      {
+        "filename": "tillie-j.webp",
+        "path": "/images/tillie-j.webp",
+        "folder": "Other",
+        "uploadedAt": "2026-04-30T02:43:56.161Z",
+        "size": 188455
+      }
+    ]
   }
 }
