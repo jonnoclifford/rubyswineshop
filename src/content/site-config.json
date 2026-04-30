@@ -100,6 +100,17 @@
           "src": "/images/mothers-group-115-x-158-mm-instagram-post-45.webp",
           "alt": "Ruby's milk bar flyer"
         }
+      },
+      {
+        "title": "Meet the Maker - Orbis ",
+        "date": "Friday May 8",
+        "time": "5pm onwards",
+        "description": "Meet Verity - the brain child behind Orbis wines. We can't wait to ask her all of the burning wine related questions and taste some delicious new drops! ",
+        "recurring": false,
+        "image": {
+          "src": "/images/orbis.webp",
+          "alt": "Orbis flyer "
+        }
       }
     ]
   },
