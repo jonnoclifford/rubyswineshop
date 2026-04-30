@@ -111,6 +111,17 @@
           "src": "/images/orbis.webp",
           "alt": "Orbis flyer "
         }
+      },
+      {
+        "title": "Meet the Maker - Tillie J",
+        "date": "Friday May 15",
+        "time": "from 5pm",
+        "description": "Another meet the maker event! YAY! Come meet superstar wine maker  Tillie J and drink some great grape juice with us! ",
+        "recurring": false,
+        "image": {
+          "src": "/images/tillie-j.webp",
+          "alt": "Tillie J flyer "
+        }
       }
     ]
   },
