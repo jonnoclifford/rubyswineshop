@@ -103,35 +103,13 @@
       },
       {
         "title": "Ruby's Milk Bar - Mothers Group",
-        "date": "Every last Thursday of the month ",
+        "date": "Every Thursday ",
         "time": "from 12 ",
         "description": "New mum in the area? Join us for Ruby's Milk Bar! just roll on in, meet some friends, make new friends and relax. Babies welcome, however limited pram space. ",
         "recurring": false,
         "image": {
           "src": "/images/mothers-group-115-x-158-mm-instagram-post-45.webp",
           "alt": "Ruby's milk bar flyer"
-        }
-      },
-      {
-        "title": "Aged Wine Tasting",
-        "date": "25th March",
-        "time": "6pm",
-        "description": "Join Seb and Tamara at Ruby's Wine Shop for an evening exploring the magic of aged wines. Seb will be pouring a selection of wines side by side, including wines dating back to the 80s.so you can experience firsthand how wines evolve ofer time. \nAcross 10 wines, we will discuss what happens as a wine ages, the factors that influence its development, and the best ways to store and source older bottles. There will also be a special prize wine for the winner of out blind tasting challenge- and plenty of fun along the way. \n\nbookings via Seb's website https://finewinetime.com.au/shop/ols/products/aged-wine-night-at-rubys \ntickets are limited and only $50! So get in quick!",
-        "recurring": false,
-        "image": {
-          "src": "/images/aged-wine-tasting.webp",
-          "alt": "Fine wine time event"
-        }
-      },
-      {
-        "title": "Meet the Maker - Crusher Wines",
-        "date": "26th March ",
-        "time": "5 pm",
-        "description": "Stop in and meet Tom & Dom, the duo behind Crusher wines. We will have lots of amazing wine on hand for you to taste and purchase and learn from. Made in QLD, they represent an incredible wine growing area. Come and learn what makes QLD wine so unique!",
-        "recurring": false,
-        "image": {
-          "src": "/images/meet-the-maker.webp",
-          "alt": "meet the maker flyer "
         }
       }
     ]
@@ -274,30 +252,5 @@
       "order": 6,
       "colorScheme": "cream"
     }
-  },
-  "media": {
-    "images": [
-      {
-        "filename": "tillie-j.webp",
-        "path": "/images/tillie-j.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-04-30T02:43:56.161Z",
-        "size": 188455
-      },
-      {
-        "filename": "orbis.webp",
-        "path": "/images/orbis.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-04-30T02:45:14.231Z",
-        "size": 484668
-      },
-      {
-        "filename": "mothers-group.webp",
-        "path": "/images/mothers-group.webp",
-        "folder": "Other",
-        "uploadedAt": "2026-04-30T02:47:24.981Z",
-        "size": 243143
-      }
-    ]
   }
 }
